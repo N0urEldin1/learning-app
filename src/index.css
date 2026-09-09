@@ -1,0 +1,67 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+	--main-bg-color: #0B0E12;
+	--secondary-bg-color: #0D1116;
+	--note-bg-color: #0F1215;
+	--hover-bg-color: #464646;
+	--main-stroke-color: #4A4C4F;
+	--yellow-stroke-color: #B5AC49;
+	--green-stroke-color: #314B3E;
+
+	--input-color-1: #737373;
+
+	--icon-color-1: #FFFFFF;
+	--icon-color-2: #A6A6A6;
+	--icon-focus-1: #8A38F5;
+
+	--text-color-main: #FFFFFF;
+	--text-color-placeholder: #86888A;
+	--text-color-inactive: #D9D9D9;
+	--text-color-yellow: #FDFF97;
+	--textcolor-green: #67AE6B;
+
+	--divider-color: var(--icon-color-3);
+
+	--success-color: #2BBA3D;
+
+	--font-family: 'Inter Variable', sans-serif;
+
+	--text-xxs-25rem: 10px;
+	--text-xs-75rem: 12px;
+	--text-sm-875rem: 14px;
+	--text-base-1rem: 16px;
+	--text-lg-125rem: 18px;
+	--text-xl-150rem: 20px;
+	--text-2xl-175rem: 22px;
+	--text-3xl-1875rem: 24px;
+
+	--font-size-h1: var(--text-xl-150rem);
+	--font-size-h2: var(--text-base-1rem);
+	--font-size-h3: var(--text-sm-875rem);
+	--font-size-p: var(--text-sm-875rem);
+	--font-size-small: var(--text-xs-75rem);
+	--font-size--very-small: var(--text-xxs-25rem);
+	--font-size-bread-crumbs: var(--text-xxs-25rem);
+
+	--font-weight-h1: 600;
+	--font-weight-h2: 600;
+	--font-weight-h3: 500;
+	--font-weight-p: 400;
+	--font-weight-small: 400;
+	--font-weight-very-small: 400;
+	--font-weight-bread-crumbs: 400;
+
+	--spacing-1: 4px;
+	--spacing-2: 8px;
+	--spacing-3: 12px;
+	--spacing-4: 14px;
+	--spacing-5: 16px;
+	--spacing-6: 24px;
+}
