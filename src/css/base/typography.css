@@ -1,0 +1,55 @@
+
+h1 {
+	font-size: var(--font-size-h1);
+	font-weight: var(--font-weight-h1);
+	font-family: var(--font-family);
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+	font-weight: var(--font-weight-h2);
+	font-family: var(--font-family);
+	margin-bottom: var(--spacing-2) 0;
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+	font-weight: var(--font-weight-h3);
+	font-family: var(--font-family);
+	margin-bottom: var(--spacing-2) 0;
+}
+
+p {
+	font-size: var(--font-size-p);
+	font-weight: var(--font-weight-p);
+	font-family: var(--font-family);
+	margin-bottom: var(--spacing-2) 0;
+	white-space: nowrap;
+}
+
+a {
+	color: var(--text-color-main);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--text-color-link);
+	text-decoration: underline;
+}
+
+
+/* Utility */
+.text-small {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-small);
+}
+.text-very-small {
+	font-size: var(--font-size-very-small);
+	font-weight: var(--font-weight-very-small);
+}
+
+.font-bread-crumbs {
+	font-size: var(--font-size-bread-crumbs);
+	font-weight: var(--font-weight-bread-crumbs);
+}
+

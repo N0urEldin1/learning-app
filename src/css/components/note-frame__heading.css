@@ -1,0 +1,148 @@
+/* Elements */
+@import url("/src/css/elements/divider.css");
+@import url("/src/css/main.css");
+
+
+.note-frame__heading {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-1);
+	width: 100%;
+	height: fit-content;
+	padding: var(--spacing-2);
+}
+
+/* Bread crumbs */
+.bread-crumbs {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--spacing-1);
+	height: fit-content;
+}
+
+.bread-crumbs-nav {
+	display: flex;
+	flex-direction: row;
+	height: fit-content;
+	width: fit-content;
+	gap: 1.78px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.bread-crumbs-nav path{
+	display: flex;
+	scale: 0.85;
+}
+
+.bread-crumbs-nav__icon {
+	font-size: 2px;
+	width: 16px;
+	height: 16px;
+	border-radius: 2px;
+}
+
+.bread-crumbs-nav__icon:hover {
+	background-color: var(--hover-bg-color);
+}
+
+.bread-crumbs-items {
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing-2);
+	margin: var(--spacing-2);
+}
+
+.bread-crumbs p {
+	font-size: var(--font-size-bread-crumbs);
+	font-weight: var(--font-weight-bread-crumbs);
+}
+
+
+.bread-crumbs a:hover {
+	color: var(--text-color-main);
+	text-decoration: underline;
+}
+
+/* Note heading */
+.note-heading {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	width: 100%;
+	height: fit-content;
+}
+
+.headign-title {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+}
+
+.heading-info__title {
+	width: 100%;
+	height: fit-content;
+}
+
+.heading-info-details {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 6px;
+}
+
+.heading-info-details__logo {
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	background-color: var(--text-color-inactive);
+}
+
+.heading-info-items {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}
+
+.elipse-small {
+	height: 6px;
+	width: 6px;
+	border-radius: 50%;
+	background-color: var(--text-color-inactive);
+}
+
+
+.heading-badge {
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing-2);
+	align-items: center;
+	padding: 4px 8px;
+	border-style: solid;
+	border-radius: 6px;
+	border-width: 0.8px;
+	border-color: var(--yellow-stroke-color);
+}
+
+.status-frame__status {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-small);
+}
+
+
+.status-frame__ellipse {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--text-color-yellow);
+}
+
+.heading-icon {
+	height: 16px;
+	width: 14px;
+}

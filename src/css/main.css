@@ -1,0 +1,73 @@
+@import url("./base/reset.css");
+@import url("./base/typography.css");
+@import url("./base/veriables.css");
+
+@import url("./components/note-frame__heading.css");
+@import url("./components/note-frame__notes.css");
+
+
+@import url("./elements/divider.css");
+
+/* Main styling */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	text-wrap: balance;
+	font: var(--font-size-p) var(--font-family);
+	background: var(--main-bg-color);
+	color: var(--text-color-main); 
+}
+
+.main-stroke {
+	border-style: solid;
+	border-radius: var(--border-size-1);
+	border-width: var(--border-width-1);
+	border-color: var(--main-stroke-color);
+}
+
+/* 
+section {
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.center {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-2);
+	flex-wrap: wrap;
+}
+ */
+
+
+/* Elements */
+.main-frame {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	width: 100%;
+	height: fit-content;
+}
+
+.note-frame {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	width: clamp(33%, 66%, 1000px);
+}
+
+

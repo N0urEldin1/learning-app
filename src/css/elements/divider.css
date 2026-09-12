@@ -1,0 +1,10 @@
+.divider {
+        display: flex;
+        padding: var(--spacing-1);
+    }
+    
+.line {
+    background-color: var(--divider-color);
+    height: 1px;
+    width: 100%;
+}
