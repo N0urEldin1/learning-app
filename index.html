@@ -8,10 +8,119 @@
     <title>learning-app-frontend</title>
   </head>
   <body>
-    <div id="root"></div>
-    <div>
-      <p>Note: This project is a work in progress and is not yet complete. Please check back later for updates.</p>
-    </div>
+      <div class="main-frame">
+        <div class="note-frame">
+          <div class="note-frame__heading">
+            <!-- Feuture feture -->
+            <!-- <div class="bread-crumbs">
+                <div class="bread-crumbs-nav">
+                  <i class="fa-solid fa-caret-left bread-crumbs-nav__icon"></i>
+                  <i class="fa-solid fa-caret-right bread-crumbs-nav__icon"></i>
+                </div>
+                <div class="bread-crumbs-items font-bread-crumbs">
+                  <a href="#">Marketing</a>
+                  <p>/</p>
+                  <a href="#">Email Marketing</a>
+                  <p>/</p>
+                  <p>Video Title...</p>
+                </div>
+            </div> -->
+            <div class="note-heading">
+              <div class="headign-title">
+                    <div class="heading-info__title">
+                      <h1>The title of the video goes here</h1>
+                    </div>
+                    <!-- Feuture feature -->
+                    <!-- <div class="heading-info-details">
+                      <span class="heading-info-details__logo"></span>
+                      <div class="heading-info-items">
+                        <a href="#" class="channel-name text-small">Channel name</a>
+                        <span class="elipse-small"></span>
+                        <p class="text-small">24 min</p>
+                        <span class="elipse-small"></span>
+                        <p class="text-small">Added 2 days ago</p>
+                      </div>
+                    </div> -->
+              </div>
+              <div class="heading-badge">
+                <span class="status-frame__ellipse"></span>
+                <p class="status-frame__status">In progress</p>
+              </div>
+              <div class="heading-icon">
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+          <div class="divider">
+            <span class="line"></span>
+          </div>
+          <div class="note-frame__notes">
+            <div class="progress-bar-frame">
+              <div class="progress-bar main-stroke">
+                <p class="progress-bar__text text-very-small">Progress: 5/7 topics completed</p>
+                <div class="progress-bar__line">
+                  <span class="line__gray"></span>
+                  <span class="line__green"></span>
+                </div>
+              </div>
+            </div>
+            <div class="notes">
+              <div class="collapsed-note">
+                <div class="topic-title">
+                  <span class="topic-title__check"></span>
+                  <h2 class="topic-title__title">1. Topic 1</h2>
+                </div>
+                <i class="collapsed-note__angle fa-solid fa-angle-down"></i>
+                <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
+              </div>
+              <div class="divider">
+                <span class="line"></span>
+              </div>
+              <div class="open-note">
+                <div class="open-note__title-section">
+                  <div class="topic-title">
+                    <span class="topic-title__check"></span>
+                    <h2 class="topic-title__title">1. Topic 2</h2>
+                  </div>
+                  <i class="collapsed-note__angle fa-solid fa-angle-up"></i>
+                  <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
+                </div>
+                <div class="open-note__note-section">
+                  <div class="overview-section">
+                    <h3 class="overview-section__title">Overview</h3>
+                    <p class="overview-section__description">text</p>
+                  </div>
+                  <div class="my-note-frame">
+                    <h3 class="my-note-frame__frame">My notes</h3>
+                  </div>
+                  <div class="my-note-editor main-stroke">
+                    <div class="note-section-icons">
+                      <i class="note-section-icons__icon fa-solid fa-italic"></i>
+                      <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="notes">
+            <!-- <button class="closed-note">
+              <i class="fa-solid fa-circle-check" style="color: var(--success-color)"></i>
+              Test
+            </button> -->
+            <div class="closed-note">
+
+            </div>
+          </div>
+
+        </div>
+        <div class="video-player"></div>
+      </div>
+
+      <!-- <t-section></t-section> -->
+    
+    <script type="module" src="/src/main-section.tsx"></script>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="https://kit.fontawesome.com/dcafb63ef6.js" crossorigin="anonymous"></script>
   </body>
 </html>
