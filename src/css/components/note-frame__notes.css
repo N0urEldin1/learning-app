@@ -70,10 +70,15 @@
 }
 
 .topic-title__check {
-	background-color: var(--icon-color-2);
-	height: 16px;
+    background-color: #2BBA3D;
+    height: 16px;
 	width: 16px;
 	border-radius: 50%;
+    cursor: pointer;
+}
+
+.gray {
+    background-color: var(--icon-color-2);
 }
 
 .open-note {
