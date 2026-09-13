@@ -47,8 +47,8 @@
                 <span class="status-frame__ellipse"></span>
                 <p class="status-frame__status">In progress</p>
               </div>
-              <div class="heading-icon">
-                <i class="fa-solid fa-ellipsis"></i>
+              <div class="heading-icon icon">
+                <i class="fa-solid fa-ellipsis default"></i>
               </div>
             </div>
           </div>
@@ -72,27 +72,39 @@
 
             <div class="notes">
 
-              <div class="collapsed-note">
-                <div class="topic-title">
-                  <span class="topic-title__check gray"></span>
-                  <h2 class="topic-title__title">1. Topic 1</h2>
+              <div class="note">
+                <div class="title-section">
+                  <div class="topic-title">
+                    <span class="topic-title__unckecked"></span>
+                    <div class="topic-title__ckecked hidden">
+                      <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h2 class="topic-title__title">1. Topic 1</h2>
+                  </div>
+                  <div class="topic-icons">
+                    <i class="collapsed-note__ellipsis fa-solid fa-ellipsis default"></i>
+                    <i class="collapsed-note__angle fa-solid fa-angle-down default"></i>
+                  </div>
                 </div>
-                <i class="collapsed-note__angle fa-solid fa-angle-down"></i>
-                <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
               </div>
 
               <div class="divider">
                 <span class="line"></span>
               </div>
 
-              <div class="open-note">
-                <div class="open-note__title-section">
+              <div class="note">
+                <div class="title-section">
                   <div class="topic-title">
-                    <span class="topic-title__check gray"></span>
+                    <span class="topic-title__unckecked"></span>
+                    <div class="topic-title__ckecked hidden">
+                      <i class="fa-solid fa-circle-check"></i>
+                    </div>
                     <h2 class="topic-title__title">1. Topic 2</h2>
                   </div>
-                  <i class="collapsed-note__angle fa-solid fa-angle-up"></i>
-                  <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
+                  <div class="topic-icons">
+                    <i class="collapsed-note__ellipsis fa-solid fa-ellipsis default"></i>
+                    <i class="collapsed-note__angle fa-solid fa-angle-up default"></i>
+                  </div>
                 </div>
                 <div class="open-note__note-section">
                   <div class="overview-section">
@@ -114,8 +126,9 @@
           </div>
 
         </div>
-        <div class="video-player"></div>
       </div>
+      <div class="video-player">
+        </div>
         
     <script type="module" src="/src/script.js"></script>
     <script src="https://kit.fontawesome.com/dcafb63ef6.js" crossorigin="anonymous"></script>

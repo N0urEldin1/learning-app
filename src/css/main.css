@@ -27,6 +27,10 @@ body {
 	border-color: var(--main-stroke-color);
 }
 
+.hidden {
+	display: none;
+}
+
 /* 
 section {
 	width: 100%;
@@ -38,9 +42,6 @@ section {
 	text-align: center;
 }
 
-.hidden {
-	display: none;
-}
 
 .flex {
 	display: flex;
@@ -71,3 +72,37 @@ section {
 }
 
 
+/* .icon {
+	box-sizing: content-box;
+	display: var(--fa-display, inline-block);
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	vertical-align: -0.125em;
+	height: 1em;
+	width: var(--fa-width, 1.25em);
+	overflow: visible;
+} */
+
+.default:hover {
+	border-radius: 2px;
+	background-color: var(--hover-bg-color);
+}
+
+/* Icons */
+.fa-ellipsis {
+	padding: 2px 0.5px;
+} 
+
+.fa-angle-down, .fa-angle-up {
+	padding-left: 0.5px;
+	padding-right: 1px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.fa-circle-check {
+	color: var(--success-color);
+	height: 100%;
+  	width: 100%;
+}

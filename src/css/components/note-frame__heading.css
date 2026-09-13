@@ -72,6 +72,8 @@
 	gap: 10px;
 	width: 100%;
 	height: fit-content;
+	/* Might want to remove later */
+	align-items: center; 
 }
 
 .headign-title {
@@ -142,7 +144,6 @@
 	background-color: var(--text-color-yellow);
 }
 
-.heading-icon {
-	height: 16px;
-	width: 14px;
-}
+/* .heading-icon {
+	padding: 5px 0.5px;
+} */
