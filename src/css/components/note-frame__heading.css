@@ -128,7 +128,7 @@
 	border-style: solid;
 	border-radius: 6px;
 	border-width: 0.8px;
-	border-color: var(--yellow-stroke-color);
+	/* border-color: var(--yellow-stroke-color); */
 }
 
 .status-frame__status {
@@ -141,7 +141,6 @@
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
-	background-color: var(--text-color-yellow);
 }
 
 /* .heading-icon {

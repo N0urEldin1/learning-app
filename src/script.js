@@ -50,57 +50,128 @@ document.querySelector('.notes').addEventListener('click', function(event) {
             } 
         }
     } 
+
+    // Update progress bar
+    let checkedCount = updateProgress()
+
+    updateBadge(checkedCount)
+
 })
 
 
-// Progress bar
-
-// Total
+// Total notes count
 const notes = document.querySelectorAll('.note')
 const noteCount = notes.length;
 
-// Checked
-const isChecked = document.querySelectorAll('h')
+
+// Update progress function
+function updateProgress() {
+
+    // Count checks
+    let checkedCount = 0;
+    let unCheckedCount = 0;
+
+    for (const note of notes) {
+
+        const checks = note.querySelector('.topic-title')
+    
+        const checked = checks.firstElementChild
+        const unChecked = checks.lastElementChild
+    
+        if (unChecked.classList.contains('hidden')) {
+            unCheckedCount++
+        }
+    
+        if (checked.classList.contains('hidden')) {
+            checkedCount++
+        }
+
+    }
 
 
-// const checkMarks = document.getElementsByClassName('topic-title')
+    // Update progress text
+    const progressTextElement = document.querySelector('.progress-bar__text')
 
-// console.log(checkMarks)
+    let progressText = progressTextElement.innerText
 
-// let checkedCount = 0;
+    progressText = `Progress: ${checkedCount}/${noteCount} topics completed`
 
-// for (let unCheckedNote of unChecked) {
-
-//     let checkedCount = 0;
-
-//     if (!unCheckedNote.classList.contains('hidden')) {
-//         checkedCount += 1
-//     }
-
-// }
-
-// console.log(checkedCount)
-// console.log(unChecked.length)
+    progressTextElement.innerText = progressText
 
 
-// Green line logic
-const progressLine = document.querySelector('.line__green')
+    // Update progress line
+    const progressLine = document.querySelector('.line__green')
 
-const value = noteCount * 10
+    const width = Math.floor((checkedCount * 100) / noteCount)
 
-progressLine.setAttribute('style', 'width: ' + value + '%')
-
-// progress text logic
+    progressLine.setAttribute('style', 'width: ' + width + '%')
 
 
-// percentage text logic
+    // Update progress percentage
+    const percentageTextElement = document.querySelector('.progress-bar__percentage')
 
-const percentageTextElement = document.querySelector('.progress-bar__percentage')
+    let percentageText = percentageTextElement.innerText
 
-let percentageText = percentageTextElement.innerText
+    percentageText = `${width}%`
 
-percentageText = `${value}%`
+    percentageTextElement.innerText = percentageText
 
-percentageTextElement.innerText = percentageText
+    return checkedCount
 
-// console.log(percentageText)
+}
+
+
+function updateBadge(checkedCount) {
+
+    const notes = document.querySelectorAll('.note')
+    const total = notes.length
+
+    // Update status padge 
+    const statusBadgeFrame = document.querySelector('.heading-badge')
+    const statusBadgeEllipse = document.querySelector('.status-frame__ellipse')
+    const statusBadgeText = document.querySelector('.status-frame__status')
+
+    // Not started
+    if (checkedCount == 0) {
+        
+        statusBadgeFrame.removeAttribute('style')
+        statusBadgeFrame.setAttribute('style', 'border-color: var(--main-stroke-color);')
+
+        statusBadgeEllipse.removeAttribute('style')
+        statusBadgeEllipse.setAttribute('style', 'background-color: var(--text-color-inactive);')
+        
+        let newStatusText = statusBadgeText.innerText
+
+        newStatusText = "Not started"
+
+        statusBadgeText.innerText = newStatusText
+
+    } else if (checkedCount == total) {
+        
+        statusBadgeFrame.removeAttribute('style')
+        statusBadgeFrame.setAttribute('style', 'border-color: var(--green-stroke-color);')
+
+        statusBadgeEllipse.removeAttribute('style')
+        statusBadgeEllipse.setAttribute('style', 'background-color: var(--text-color-green);')
+
+        let newStatusText = statusBadgeText.innerText
+
+        newStatusText = "Completed"
+
+        statusBadgeText.innerText = newStatusText
+
+    } else {
+
+        statusBadgeFrame.removeAttribute('style')
+        statusBadgeFrame.setAttribute('style', 'border-color: var(--yellow-stroke-color);')
+
+        statusBadgeEllipse.removeAttribute('style')
+        statusBadgeEllipse.setAttribute('style', 'background-color: var(--text-color-yellow);')
+
+        let newStatusText = statusBadgeText.innerText
+
+        newStatusText = "In progress"
+
+        statusBadgeText.innerText = newStatusText
+    }
+}
