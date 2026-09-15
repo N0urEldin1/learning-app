@@ -154,3 +154,21 @@
 	color: var(--icon-color-2);
 }
 
+.add-topic-frame {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: fit-content;
+	padding: 0 30px;
+}
+
+.add-topic-btn {
+	background-color: var(--secondary-bg-color);
+	border-color: var(--main-stroke-color);
+	border-radius: var(--border-size-1);
+	border-width: 0.8px;
+	width: 100%;
+	padding: 16px 0;
+	color: var(--input-color-1);
+}
+
