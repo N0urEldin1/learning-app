@@ -39,7 +39,6 @@
 
 .line__green {
     position: absolute;
-    width: 40%;
     height: 4px;
     border-radius: 2px;
 	background-color: #2BBA3D;
@@ -64,16 +63,23 @@
 .title-section {
 	display: flex;
 	flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
 	width: 100%;
 	height: fit-content;
+	justify-content: space-between;
+}
+
+.title-section__left {
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing-2);
+	align-items: center;
 }
 
 .topic-title {
 	display: flex;
 	flex-direction: row;
 	gap: var(--spacing-2);
-	width: 100%;
 	height: fit-content;
     align-items: center;
 }
