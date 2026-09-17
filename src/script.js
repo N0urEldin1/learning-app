@@ -124,7 +124,7 @@ function updateProgress() {
 }
 
 
-// Update badge function
+// Update badge functiong
 function updateBadge(checkedCount) {
 
     const notes = document.querySelectorAll('.note')
@@ -182,28 +182,34 @@ function updateBadge(checkedCount) {
 
 
 // Accordion functionality
-const accordion = document.getElementsByClassName('note')
-console.log(accordion)
+document.querySelector('.notes').addEventListener('click', function(event) {
 
+    const target = event.target;
 
-for (let i = 0; i < accordion.length; i++ ) { 
+    if (target.closest('button')) {
 
-    const noteSection = accordion[i].getElementsByClassName('open-note__note-section')
-
+        const toggleBtn = target.closest('button')
     
-    accordion[i].addEventListener('click', function() {
-        console.log(noteSection)
-        noteSection[0].classList.toggle('active')
-        }
-    )
-}
+        console.log(toggleBtn)
+                        
+        const note = toggleBtn.closest('.note')
+                    
+        const noteSection = note.querySelector(".open-note__note-section")
+                        
+        if (noteSection.classList.contains('active')) {
+            noteSection.classList.remove('active')
+        } else {
+            noteSection.classList.add('active')
+        }                
+    }
+})
 
 
 // Add topic update progress
 document.querySelector('.add-topic-btn').addEventListener('click', updateProgress)
 
 // Add topic update status
-document.querySelector('.add-topic-btn').addEventListener('click', function(e) {
+document.querySelector('.add-topic-btn').addEventListener('click', function() {
     let checkedCount = updateProgress()
     updateBadge(checkedCount)
 } )

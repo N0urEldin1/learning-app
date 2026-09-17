@@ -95,10 +95,7 @@ section {
 } 
 
 .fa-angle-down, .fa-angle-up {
-	padding-left: 0.5px;
-	padding-right: 1px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding: 2px 0.5px;
 }
 
 .fa-circle-check {

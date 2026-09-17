@@ -3,10 +3,6 @@ function addTopic() {
     const notes = document.querySelector(".notes")
 
     notes.insertAdjacentHTML('beforeend', `
-              <div class="divider">
-                <span class="line"></span>
-              </div>
-
               <div class="note">
 
                 <div class="title-section">
@@ -22,10 +18,16 @@ function addTopic() {
                     </div>
 
                     <div class="title-section__right">
+                      
+                      <div class="options default">
+                        <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
+                      </div>
+                      
+                      <button type="button" class="accordion default">
+                        <i class="collapsed-note__angle fa-solid fa-angle-down default"></i>
+                      </button>
 
                       <div class="topic-icons">
-                          <i class="collapsed-note__ellipsis fa-solid fa-ellipsis default"></i>
-                          <i class="collapsed-note__angle fa-solid fa-angle-down default"></i>
                       </div>
 
                     </div>
@@ -54,9 +56,11 @@ function addTopic() {
                   
                     </div>
 
-                </div>   
+                </div>  
 
-              </div>
+                <div class="divider">
+                  <span class="line"></span>
+                </div>
     `
     )
 }
