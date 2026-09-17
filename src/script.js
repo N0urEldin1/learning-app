@@ -2,54 +2,17 @@ document.querySelector('.notes').addEventListener('click', function(event) {
     
     const target = event.target
 
-    const nextSibling = target.nextElementSibling;
+    const checkMark = target.closest('.icon')
 
-    const parent = target.parentElement;
-
-    const grandParent = parent.parentElement;
-
-    const previuosParentSibling = grandParent.previousElementSibling;
-
-    const previuosSibling = parent.previousElementSibling
-
-
-    if (target.matches('.topic-title__unckecked')) {
-        if (target.classList.contains('hidden')) {
-            target.classList.remove('hidden')
-            if (nextSibling.classList.contains('topic-title__ckecked')) {
-                nextSibling.classList.add('hidden')
-            }
-        } else {
-            target.classList.add('hidden')
-            if (nextSibling.classList.contains('topic-title__ckecked')) {
-                nextSibling.classList.remove('hidden')
-            }
-        }
+    if (checkMark.classList.contains('topic-title__unckecked')) {
+        checkMark.classList.add('hidden')
+        const unCheck = checkMark.nextElementSibling
+        unCheck.classList.remove('hidden')
+    } else if (checkMark.classList.contains('topic-title__ckecked')) {
+        checkMark.classList.add('hidden')
+        const unCheck = checkMark.previousElementSibling
+        unCheck.classList.remove('hidden')
     }
-
-    if (target.matches('svg')) {
-        if (parent.classList.contains('topic-title__unckecked')) {
-            if (parent.classList.contains('hidden')) {
-                parent.classList.remove('hidden')
-                previuosSibling.classList.add('hidden')
-            } else {
-                parent.classList.add('hidden')
-                previuosSibling.classList.remove('hidden')
-            }
-        }
-    }
-    
-    if (target.matches('path')) {
-        if (previuosParentSibling.classList.contains('topic-title__unckecked')) {
-            if (previuosParentSibling.classList.contains('hidden')) {
-                previuosParentSibling.classList.remove('hidden')
-                grandParent.classList.add('hidden')
-            } else {
-                previuosParentSibling.classList.add('hidden')
-                grandParent.classList.remove('hidden')
-            } 
-        }
-    } 
 
     // Update progress bar
     let checkedCount = updateProgress()
