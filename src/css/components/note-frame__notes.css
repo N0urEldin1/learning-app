@@ -184,6 +184,8 @@
 }
 
 .add-topic-btn {
+	display: flex;
+	justify-content: center;
 	background-color: var(--secondary-bg-color);
 	border-color: var(--main-stroke-color);
 	border-radius: var(--border-size-1);
