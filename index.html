@@ -216,9 +216,33 @@
 
             </div>
 
+            <div class="video-frame">
+              <div class="video-frame__container">
+                <iframe frameborder="0" id="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0&fs=0&iv_load_policy=3&controls=1">
+              </div>
+            </iframe>
+
+          <script type="text/javascript">
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+              player = new YT.Player('video-player', {
+                  events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                  }
+              });
+            }
+            // function onPlayerReady(event) {}
+            // function onPlayerStateChange(event) {}
+          </script>
+
+            </div>
       </div>
-      <div class="video-player">
-        </div>
         
     <script src="add-topic.js"></script>
     <script type="module" src="/src/script.js"></script>
