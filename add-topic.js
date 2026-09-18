@@ -14,7 +14,7 @@ function addTopic() {
                           <i class="fa-solid fa-circle-check"></i>
                         </div>
                       </div>
-                      <h2 class="topic-title__title">1. Topic 1</h2>
+                      <div contenteditable="true" spellcheck="false" data-placeholder="Write the topic name" class="topic-title__title" name="" id=""></div>
                     </div>
 
                     <div class="title-section__right">
