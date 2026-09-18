@@ -1,3 +1,6 @@
+@import url("typography.css");
+@import url("veriables.css");
+
 /* Reset */
 * {
 	margin: 0;
@@ -9,6 +12,34 @@ button {
 	background: none;
 	border: none;
 	color: inherit;
+	cursor: pointer;
+}
+
+[contenteditable="true"] {
+	background: none;
+	font-size: var(--font-size-small);
+	line-height: 1.4em;
+	/* padding: 0px 8px; */
+}
+
+[contenteditable="true"]:focus {
+	outline: none;
+	/* padding: 0px 8px; */
+}
+
+[contenteditable="true"]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--text-color-placeholder);
+  cursor: text;
+}
+
+h1, h2, h3 {
+	cursor: default;
+}
+
+::spelling-error {
+  text-decoration: underline rgb(208, 38, 64);
+  color: var(--text-color-inactive);
 }
 
 /* .svg-inline--fa {

@@ -25,6 +25,7 @@ p {
 	font-family: var(--font-family);
 	margin-bottom: var(--spacing-2) 0;
 	white-space: nowrap;
+	cursor: default;
 }
 
 a {
@@ -46,6 +47,7 @@ a:hover {
 .text-very-small {
 	font-size: var(--font-size-very-small);
 	font-weight: var(--font-weight-very-small);
+	cursor: default;
 }
 
 .font-bread-crumbs {

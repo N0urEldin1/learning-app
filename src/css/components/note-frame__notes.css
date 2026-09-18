@@ -146,7 +146,11 @@
 }
 
 .overview-section__description {
-	color: var(--input-color-1);
+	padding: 0px;
+}
+
+.overview-section__description:focus {
+	padding: 0px;
 }
 
 .my-note-editor {

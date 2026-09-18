@@ -149,7 +149,9 @@ document.querySelector('.notes').addEventListener('click', function(event) {
 
     const target = event.target;
 
-    if (target.closest('button')) {
+    const btn = target.closest('button')
+
+    if (btn.classList.contains('accordion')) {
 
         const toggleBtn = target.closest('button')
     
@@ -176,3 +178,73 @@ document.querySelector('.add-topic-btn').addEventListener('click', function() {
     let checkedCount = updateProgress()
     updateBadge(checkedCount)
 } )
+
+
+// Custome text editor script setup - Feuture feature
+// document.querySelector('.notes').addEventListener('mouseup', () => {
+
+//     const selection = window.getSelection()
+//     const start = selection.focusOffset
+//     const end = selection.anchorOffset
+//     const parent = window.getSelection().anchorNode.parentElement
+
+//     const line = parent.innerText
+
+//     console.log(selection)
+//     console.log(parent)
+//     console.log(line)
+//     console.log(start)
+//     console.log(end)
+
+//     const wordLength = end - start
+//     const div = [...line]
+
+//     const newDiv = div.splice(start, wordLength)
+//     console.log(newDiv)
+
+//     // for (let i = start; i < end; i++) {
+//     //     Div[i] - line[i]
+//     // }
+//     // const string = Div.toString()
+
+//     const newString = ''
+//     let final = newDiv.array.forEach(element => {
+//         if (element != ',') {
+//             newString += element
+//         }
+//     });
+
+//     console.log(final)
+//     // if (selection) {}
+
+
+//     }
+// )
+
+
+// Tiptap script setup - Feuture feature
+// import { Editor } from '@tiptap/core'
+// import StarterKit from '@tiptap/starter-kit'
+
+// new Editor({
+//   element: document.querySelector('#editor'),
+//   extensions: [StarterKit],
+//   content: '<p>Hello World!</p>',
+// })
+
+
+
+// // Listen for clicks and call editor commands
+// document.querySelector('#bold-button').addEventListener('click', () => {
+//   Editor.chain().focus().toggleBold().run()
+// })
+
+// // Check if a mark or node is active to style the button
+// const isBold = Editoritor.isActive('bold')
+// const isHeading1 = Editor.isActive('heading', { level: 1 })
+// const isBulletList = Editor.isActive('bulletList')
+
+// // Update button active state on selection change
+// Editor.on('selectionUpdate', () => {
+//   document.querySelector('#bold-button').classList.toggle('is-active', Editor.isActive('bold'))
+// })
