@@ -9,8 +9,8 @@ function addTopic() {
 
                     <div class="title-section__left">
                       <div class="topic-title">
-                        <span class="topic-title__unckecked icon"></span>
-                        <div class="topic-title__ckecked icon hidden">
+                        <span class="topic-title__unckecked checkmark"></span>
+                        <div class="topic-title__ckecked checkmark hidden">
                           <i class="fa-solid fa-circle-check"></i>
                         </div>
                       </div>
@@ -19,9 +19,9 @@ function addTopic() {
 
                     <div class="title-section__right">
                       
-                      <div class="options default">
+                      <button type="button" class="options default">
                         <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
-                      </div>
+                      </button>
                       
                       <button type="button" class="accordion default">
                         <i class="collapsed-note__angle fa-solid fa-angle-down default"></i>
@@ -38,7 +38,7 @@ function addTopic() {
                       
                       <div class="overview-section">
                         <h3 class="overview-section__title">Overview</h3>
-                        <p class="overview-section__description">text</p>
+                        <div contenteditable="true" spellcheck="true" data-placeholder="Write a quick overview" class="overview-section__description" name="" id=""></div>
                       </div>
 
                       <div class="my-note-frame">
@@ -47,16 +47,13 @@ function addTopic() {
 
                       <div class="my-note-editor main-stroke">
 
-                        <div class="note-section-icons">
-                          <i class="note-section-icons__icon fa-solid fa-italic"></i>
-                          <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
-                        </div>
+                        <div contenteditable="true" spellcheck="true" data-placeholder="Start typing your notes..." class="my-note-editor__content" name="" id=""></div>
 
                       </div>
                   
                     </div>
 
-                </div>  
+                </div> 
 
                 <div class="divider">
                   <span class="line"></span>

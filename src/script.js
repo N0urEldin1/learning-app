@@ -1,17 +1,42 @@
 document.querySelector('.notes').addEventListener('click', function(event) {
     
     const target = event.target
-
-    const checkMark = target.closest('.icon')
-
-    if (checkMark.classList.contains('topic-title__unckecked')) {
-        checkMark.classList.add('hidden')
-        const unCheck = checkMark.nextElementSibling
-        unCheck.classList.remove('hidden')
-    } else if (checkMark.classList.contains('topic-title__ckecked')) {
-        checkMark.classList.add('hidden')
-        const unCheck = checkMark.previousElementSibling
-        unCheck.classList.remove('hidden')
+    
+    if (target.closest('.checkmark')) {
+        
+        const checkMark = target.closest('.checkmark')
+    
+        if (checkMark.classList.contains('topic-title__unckecked')) {
+            checkMark.classList.add('hidden')
+            const unCheck = checkMark.nextElementSibling
+            unCheck.classList.remove('hidden')
+        } else if (checkMark.classList.contains('topic-title__ckecked')) {
+            checkMark.classList.add('hidden')
+            const unCheck = checkMark.previousElementSibling
+            unCheck.classList.remove('hidden')
+        }
+    
+    }
+    
+    if (target.closest('button')) {
+        
+        const btn = target.closest('button')
+        
+        // Accordion functionality
+        if (btn.classList.contains('accordion')) {
+            
+            const toggleBtn = target.closest('button')
+                        
+            const note = toggleBtn.closest('.note')
+            
+            const noteSection = note.querySelector(".open-note__note-section")
+            
+            if (noteSection.classList.contains('active')) {
+                noteSection.classList.remove('active')
+            } else {
+                noteSection.classList.add('active')
+            }                
+        }
     }
 
     // Update progress bar
@@ -145,29 +170,29 @@ function updateBadge(checkedCount) {
 
 
 // Accordion functionality
-document.querySelector('.notes').addEventListener('click', function(event) {
+// document.querySelector('.notes').addEventListener('click', function(event) {
 
-    const target = event.target;
+//     const target = event.target;
 
-    const btn = target.closest('button')
+//     const btn = target.closest('button')
 
-    if (btn.classList.contains('accordion')) {
+//     if (btn.classList.contains('accordion')) {
 
-        const toggleBtn = target.closest('button')
+//         const toggleBtn = target.closest('button')
     
-        console.log(toggleBtn)
+//         console.log(toggleBtn)
                         
-        const note = toggleBtn.closest('.note')
+//         const note = toggleBtn.closest('.note')
                     
-        const noteSection = note.querySelector(".open-note__note-section")
+//         const noteSection = note.querySelector(".open-note__note-section")
                         
-        if (noteSection.classList.contains('active')) {
-            noteSection.classList.remove('active')
-        } else {
-            noteSection.classList.add('active')
-        }                
-    }
-})
+//         if (noteSection.classList.contains('active')) {
+//             noteSection.classList.remove('active')
+//         } else {
+//             noteSection.classList.add('active')
+//         }                
+//     }
+// })
 
 
 // Add topic update progress
