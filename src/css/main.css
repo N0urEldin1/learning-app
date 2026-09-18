@@ -82,20 +82,20 @@ section {
 	max-width: 33%;
 	margin-top: 16px;
 	margin-bottom: 16px;
-	background-color: var(--secondary-bg-color);
+}
+
+.video-frame__container {
+  	position: relative;
+  	overflow: hidden;
+  	aspect-ratio: 16 / 9;
+  	/* padding-top: 56.25%; */
+  	width: 100%;
+  	background-color: var(--secondary-bg-color);
 	border-width: 0.8px;
 	border-color: var(--main-stroke-color);
 	border-style: solid;
 	border-radius: 8px;
 	padding: 8px;
-}
-
-.video-frame__container {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  /* padding-top: 56.25%; */
-  width: 100%;
 }
 
 iframe {
