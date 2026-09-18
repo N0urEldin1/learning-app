@@ -86,6 +86,9 @@
 .heading-info__title {
 	width: 100%;
 	height: fit-content;
+	font-size: var(--font-size-h1);
+	font-weight: var(--font-weight-h1);
+	font-family: var(--font-family);
 }
 
 .heading-info-details {
