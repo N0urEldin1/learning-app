@@ -51,7 +51,7 @@
 .title-section__left {
 	display: flex;
 	flex-direction: row;
-	gap: var(--spacing-2);
+	gap: 6px;
 	align-items: center;
 }
 
@@ -74,8 +74,8 @@
     /* background-color: #2BBA3D; */
 
 .topic-title__unckecked {
-    height: 18px;
-    width: 18px;
+    height: 16px;
+    width: 16px;
     border-radius: 50%;
     cursor: pointer;
     border-style: solid;
@@ -87,8 +87,8 @@
 .topic-title__ckecked {
 	display: flex;
 	align-items: center;
-	width: 18px;
-  	height: 18px;
+	width: 16px;
+  	height: 16px;
 }
 
 .topic-title__title {
@@ -106,7 +106,7 @@
     gap: 12px;
 }
 
-.open-note__note-section {
+.note-section {
 	display: none;
 	flex-direction: column;
 	gap: var(--spacing-4);
@@ -123,7 +123,7 @@
 	height: fit-content;
 }
 
-.overview-section {
+.note-section__overview {
 	display: flex;
 	flex-direction: column;
 	width: fit-content;
@@ -131,15 +131,36 @@
 	gap: var(--spacing-1);
 }
 
-.overview-section__description {
+.overview__text {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-p);
+	font-family: var(--font-family);
+	margin-bottom: var(--spacing-2) 0;
+	white-space: nowrap;
 	padding: 0px;
 }
 
-.overview-section__description:focus {
+.overview__text:focus {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-p);
+	font-family: var(--font-family);
+	margin-bottom: var(--spacing-2) 0;
+	white-space: nowrap;
 	padding: 0px;
 }
 
-.my-note-editor {
+.note-section__note {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.note__tag {
+	font-size: var(--font-size-h3);
+	font-weight: 300;
+}
+
+.note__frame {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-4);

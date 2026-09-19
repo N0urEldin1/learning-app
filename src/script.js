@@ -29,7 +29,7 @@ document.querySelector('.notes').addEventListener('click', function(event) {
                         
             const note = toggleBtn.closest('.note')
             
-            const noteSection = note.querySelector(".open-note__note-section")
+            const noteSection = note.querySelector(".note-section")
             
             if (noteSection.classList.contains('active')) {
                 noteSection.classList.remove('active')

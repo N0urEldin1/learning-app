@@ -87,7 +87,7 @@
 
             <div class="progress-bar-frame">
               <div class="progress-bar main-stroke">
-                <p class="progress-bar__text text-very-small">Progress: Zero topic completed</p>
+                <p class="progress-bar__text text-very-small">Progress: 0/1 topics completed</p>
                 <div class="progress-bar__line">
                   <span class="line__gray"></span>
                   <span class="line__green"></span>
@@ -104,10 +104,9 @@
 
           <div class="note-frame__notes">
 
-
             <div class="notes">
 
-              <div class="note">
+                <div class="note">
 
                 <div class="title-section">
 
@@ -138,42 +137,45 @@
 
                 </div>
 
-                <div class="open-note__note-section">
+                <div class="note-section"> <!-- note-section -->
                       
-                      <div class="overview-section">
-                        <h3 class="overview-section__title">Overview</h3>
-                        <div contenteditable="true" spellcheck="true" data-placeholder="Write a quick overview" class="overview-section__description" name="" id=""></div>
+                      <div class="note-section__overview"> <!-- note-section__overview -->
+                        <h3 class="overvirew__title">Overview</h3> <!-- overvirew__title -->
+                        <div contenteditable="true" spellcheck="true" data-placeholder="Write a quick overview" class="overview__text" name="" id=""></div> <!-- overview__text -->
                       </div>
 
-                      <div class="my-note-frame">
-                        <h3 class="my-note-frame__frame">My notes</h3>
-                      </div>
+                      <div class="note-section__note"> <!-- note-section__note -->
 
-                      <div class="my-note-editor main-stroke">
+                        <p class="note__tag">My notes:</p> <!-- note__title -->
 
-                        <!-- Text editor icons - Feuture feature -->
-                        <!-- <div class="note-section-icons">
-                          <i class="note-section-icons__icon fa-solid fa-italic"></i>
-                          <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
-                        </div> -->
-                        <div contenteditable="true" spellcheck="true" data-placeholder="Start typing your notes..." class="my-note-editor__content" name="" id=""></div>
-                        
-                        <!-- TipTap setup - Feuture feature -->
-                        <!-- <div class="editor-container">
-                          <div class="toolbar" id="toolbar">
-                            <button id="bold-button" data-tiptap-button="bold">Bold</button>
-                            <button data-tiptap-button="italic">Italic</button>
-                            <button data-tiptap-button="strike">Strike</button>
-                            <button data-tiptap-button="code">Code</button>
-                            <button data-tiptap-button="h1">H1</button>
-                            <button data-tiptap-button="h2">H2</button>
-                            <button data-tiptap-button="bulletList">Bullet List</button>
-                            <button data-tiptap-button="orderedList">Ordered List</button>
-                            <button data-tiptap-button="blockquote">Blockquote</button>
-                            <button data-tiptap-button="codeBlock">Code Block</button>
-                          </div>
-                          <div id="editor"></div>
-                        </div> -->
+                        <div class="note__frame main-stroke"> <!-- note__frame -->
+                          
+                          <!-- Text editor icons - Feuture feature -->
+                          <!-- <div class="note-section-icons">
+                            <i class="note-section-icons__icon fa-solid fa-italic"></i>
+                            <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
+                          </div> -->
+  
+                          <div contenteditable="true" spellcheck="true" data-placeholder="Start typing your notes..." class="note__text" name="" id=""></div> <!-- note__text -->
+                          
+                          <!-- TipTap setup - Feuture feature -->
+                          <!-- <div class="editor-container">
+                            <div class="toolbar" id="toolbar">
+                              <button id="bold-button" data-tiptap-button="bold">Bold</button>
+                              <button data-tiptap-button="italic">Italic</button>
+                              <button data-tiptap-button="strike">Strike</button>
+                              <button data-tiptap-button="code">Code</button>
+                              <button data-tiptap-button="h1">H1</button>
+                              <button data-tiptap-button="h2">H2</button>
+                              <button data-tiptap-button="bulletList">Bullet List</button>
+                              <button data-tiptap-button="orderedList">Ordered List</button>
+                              <button data-tiptap-button="blockquote">Blockquote</button>
+                              <button data-tiptap-button="codeBlock">Code Block</button>
+                            </div>
+                            <div id="editor"></div>
+                          </div> -->
+  
+                        </div>
 
                       </div>
                   
@@ -184,60 +186,7 @@
                 <div class="divider">
                   <span class="line"></span>
                 </div>
-  
-                <!-- <div class="note">
-  
-                  <div class="title-section">
-  
-                      <div class="title-section__left">
-                        <div class="topic-title">
-                          <span class="topic-title__unckecked"></span>
-                          <div class="topic-title__ckecked hidden">
-                            <i class="fa-solid fa-circle-check"></i>
-                          </div>
-                        </div>
-                        <h2 class="topic-title__title">1. Topic 1</h2>
-                      </div>
-  
-                      <div class="title-section__right">
-  
-                        <div class="topic-icons">
-                            <i class="collapsed-note__ellipsis fa-solid fa-ellipsis default"></i>
-                            <i class="collapsed-note__angle fa-solid fa-angle-down default"></i>
-                        </div>
-  
-                      </div>
-  
-                  </div>
-  
-                  <div class="open-note__note-section">
-                        
-                        <div class="overview-section">
-                          <h3 class="overview-section__title">Overview</h3>
-                          <p class="overview-section__description">text</p>
-                        </div>
-  
-                        <div class="my-note-frame">
-                          <h3 class="my-note-frame__frame">My notes</h3>
-                        </div>
-  
-                        <div class="my-note-editor main-stroke">
-  
-                          <div class="note-section-icons">
-                            <i class="note-section-icons__icon fa-solid fa-italic"></i>
-                            <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
-                          </div>
-  
-                        </div>
-                    
-                      </div>
-  
-                  </div>   
-   -->
-                </div>
-  
-                <div class="divider">
-                <span class="line"></span>
+
                 </div>
   
                 <div class="add-topic-frame">
