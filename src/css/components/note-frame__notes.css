@@ -5,6 +5,10 @@
 .note-frame__notes {
 	display: flex;
 	flex-direction: column;
+	min-width: 0;
+	min-height: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
 	padding: 8px 32px;
 	gap: 8px;
 	width: 100%;

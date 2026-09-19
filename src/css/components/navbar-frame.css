@@ -1,0 +1,56 @@
+@import url("/src/css/main.css");
+@import url("/src/css/main.css");
+
+.navigation-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin-top: 16px;
+	margin-bottom: 16px;
+    gap: 12px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+}
+
+.logo-icon {
+    height: 12px;
+    width: 12px;
+    background-color: blue;
+}
+
+.nav-divider {
+    background-color: var(--divider-color);
+    height: 1px;
+    width: 32px;
+}
+
+.navigation-icons__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 56px;
+    gap: 4px;
+}
+
+.nav-icon-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+}
+
+.nav-icon__text {
+    font-size: 8px;
+}
