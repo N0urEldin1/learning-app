@@ -118,19 +118,22 @@ section {
 	width: 100%;
 	height: calc(100vh - 32px);
 	justify-content: space-around;
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-top: 8px;
 }
 
 .note-frame {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	width: clamp(33%, 66%, 80%);
+	width: clamp(33%, 70%, 75%);
 	margin-top: 16px;
 	margin-bottom: 16px;
 }
 
 .video-frame {
-	flex: 0 0 33%;
+	flex: 0 0 30%;
 	height: 100%;
 	width: 100%;
 	max-width: 33%;
@@ -189,4 +192,32 @@ iframe {
 	color: var(--success-color);
 	height: 100%;
   	width: 100%;
+}
+
+
+@media (width <= 70rem) {
+
+	.main-frame {
+		flex-direction: column-reverse;
+		gap: 0px;
+		margin: 0;
+	}
+
+	.note-frame {
+		width: 100%;
+		align-self: center;
+		margin-top: 8px;
+		margin-bottom: 8px;
+		padding: 0 24px;
+	}
+
+	.video-frame {
+		align-self: center;
+		height: fit-content;
+		max-width: 30rem;
+		width: 95%;
+		margin-top: 24px;
+		margin-bottom: 8px;
+	}
+
 }
