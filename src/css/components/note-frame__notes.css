@@ -23,7 +23,11 @@
 }
 
 .progress-bar-frame {
-	margin: 0 64px;
+	margin: 0 144px;
+
+	@media (width <= 70rem) {
+		margin: 0 64px;
+	}
 }
 
 .progress-bar {
