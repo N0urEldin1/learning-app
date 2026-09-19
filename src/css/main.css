@@ -25,6 +25,43 @@ body {
 	overflow: hidden;
 }
 
+
+@supports (scrollbar-color: auto) {
+  .note-frame__notes {
+    /* Format: scrollbar-color: [Thumb Color] [Track Color]; */
+    scrollbar-color: var(--scrollbar-color) var(--main-bg-color);
+    
+    /* Options: auto | thin */
+    scrollbar-width: thin; 
+  }
+}
+
+@supports selector(::-webkit-scrollbar) {
+  /* The overall scrollbar width/height */
+  .note-frame__notes::-webkit-scrollbar {
+    width: 10px;     /* Vertical scrollbar width */
+    height: 10px;    /* Horizontal scrollbar height */
+  }
+
+  /* The background track underneath the bar */
+  .note-frame__notes::-webkit-scrollbar-track {
+    background: var(--main-bg-color);
+    border-radius: 5px;
+  }
+
+  /* The draggable handle/thumb */
+  .note-frame__notes::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 5px;
+  }
+
+  /* Interactive hover effect on the thumb */
+  .note-frame__notes::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+  }
+}
+
+
 .main-stroke {
 	border-style: solid;
 	border-radius: var(--border-size-1);
