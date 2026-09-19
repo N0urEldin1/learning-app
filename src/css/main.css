@@ -127,16 +127,16 @@ section {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	width: clamp(33%, 70%, 75%);
+	width: clamp(33%, 64%, 70%);
 	margin-top: 16px;
 	margin-bottom: 16px;
 }
 
 .video-frame {
-	flex: 0 0 30%;
+	flex: 0 0 36%;
 	height: 100%;
 	width: 100%;
-	max-width: 33%;
+	max-width: 36%;
 	margin-top: 16px;
 	margin-bottom: 16px;
 }
