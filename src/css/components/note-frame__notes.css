@@ -193,12 +193,18 @@
 .add-topic-btn {
 	display: flex;
 	justify-content: center;
-	background-color: var(--secondary-bg-color);
-	border-color: var(--main-stroke-color);
+	border-style: solid;
 	border-radius: var(--border-size-1);
+	border-color: var(--secondary-bg-color);
 	border-width: 0.8px;
+	background-color: var(--secondary-bg-color);
 	width: 100%;
 	padding: 16px 0;
 	color: var(--input-color-1);
 }
 
+
+.add-topic-btn:hover {
+	border-color: var(--hover-bg-color);
+	/* color: var(--text-color-main) */
+}
