@@ -179,6 +179,15 @@ iframe {
 	background-color: var(--hover-bg-color);
 }
 
+.option {
+	display: flex;
+	width: 100%;
+	min-width: 6rem;
+	padding: 4px 6px;
+	font-size: 0.7rem;
+	font-weight: 200;
+}
+
 /* Icons */
 .fa-ellipsis {
 	padding: 2px 0.5px;

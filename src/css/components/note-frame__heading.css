@@ -125,9 +125,9 @@
 	height: fit-content;
 	display: flex;
 	flex-direction: row;
-	gap: var(--spacing-2);
+	gap: var(--spacing-1);
 	align-items: center;
-	padding: 4px 8px;
+	padding: 2px 4px; /* 4px 8px; */
 	border-style: solid;
 	border-radius: 6px;
 	border-width: 0.8px;
@@ -135,20 +135,39 @@
 }
 
 .status-frame__status {
-	font-size: var(--font-size-small);
+	font-size: var(--font-size-very-small);
 	font-weight: var(--font-weight-small);
 }
 
-
 .status-frame__ellipse {
-	width: 10px;
-	height: 10px;
+	width: 0.5rem;
+	height: 0.5rem;
 	border-radius: 50%;
 }
 
-/* .heading-icon {
-	padding: 5px 0.5px;
-} */
+.heading-options {
+	position: relative;
+}
+
+.heading-options__lst {
+	visibility: hidden;
+	position: absolute;	
+	top: 1.32rem;
+	right: 0px;
+	transition: 0s 0.15s;
+
+	background-color: var(--secondary-bg-color);
+	border-style: solid;
+	border-radius: 6px;
+	border-width: 0.8px;
+	border-color: var(--main-stroke-color);
+}
+
+.heading-options:hover .heading-options__lst,
+.heading-options:focus .heading-options__lst,
+.heading-options:focus-within .heading-options__lst {
+	visibility: visible;
+}
 
 .progress-bar-frame {
 	margin: 0 144px;
