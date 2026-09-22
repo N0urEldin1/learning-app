@@ -189,7 +189,7 @@ iframe {
 	transition: all 0.3s ease;
 }
 
-.fa-circle-check {
+.fa-square-check {
 	color: var(--success-color);
 	height: 100%;
   	width: 100%;

@@ -74,12 +74,12 @@
     /* background-color: #2BBA3D; */
 
 .topic-title__unckecked {
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
+    height: 14.0167px;
+    width: 14.0167px;
+    border-radius: 2px;
     cursor: pointer;
     border-style: solid;
-    border-width: 4px;
+    border-width: 3.2px;
     border-color: var(--icon-color-2);
     /* background-color: var(--icon-color-2); */
 }
