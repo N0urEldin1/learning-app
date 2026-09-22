@@ -24,7 +24,7 @@ function addTopic() {
                       </button>
                       
                       <button type="button" class="accordion default">
-                        <i class="collapsed-note__angle fa-solid fa-angle-down default"></i>
+                        <i class="collapsed-note__angle fa-solid fa-angle-down"></i>
                       </button>
 
                       <div class="topic-icons">

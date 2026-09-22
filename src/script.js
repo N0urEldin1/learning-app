@@ -30,11 +30,15 @@ document.querySelector('.notes').addEventListener('click', function(event) {
             const note = toggleBtn.closest('.note')
             
             const noteSection = note.querySelector(".note-section")
+
+            const icon = note.querySelector('.fa-angle-down')
             
             if (noteSection.classList.contains('active')) {
                 noteSection.classList.remove('active')
+                icon.removeAttribute('style', 'transform: rotate(180deg)')
             } else {
                 noteSection.classList.add('active')
+                icon.setAttribute('style', 'transform: rotate(180deg)')
             }                
         }
     }
