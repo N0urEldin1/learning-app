@@ -17,12 +17,16 @@ html {
 body {
 	display: flex;
 	flex-direction: row;
-	height: 100vh;
+	/* height: 100vh; */
 	text-wrap: balance;
 	font: var(--font-size-p) var(--font-family);
 	background: var(--main-bg-color);
 	color: var(--text-color-main); 
-	overflow: hidden;
+	/* overflow: hidden; */
+}
+
+aside {
+	min-height: 100dvh;
 }
 
 
@@ -211,6 +215,7 @@ iframe {
 		flex-direction: column-reverse;
 		gap: 0px;
 		margin: 0;
+		overflow-y: hidden;
 	}
 
 	.note-frame {
@@ -222,12 +227,13 @@ iframe {
 	}
 
 	.video-frame {
+		flex: 0 1 36%;
 		align-self: center;
 		height: fit-content;
-		max-width: 30rem;
+		max-width: 20rem;
 		width: 95%;
 		margin-top: 24px;
-		margin-bottom: 8px;
+		margin-bottom: 0px;
 	}
 
 }
