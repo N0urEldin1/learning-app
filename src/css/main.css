@@ -211,6 +211,10 @@ iframe {
 
 @media (width <= 70rem) {
 
+	html {
+		font-size: 85%;
+	}
+
 	.main-frame {
 		flex-direction: column-reverse;
 		gap: 0px;
