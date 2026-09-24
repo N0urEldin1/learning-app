@@ -43,7 +43,37 @@
         </div>
       </aside>
 
-      <main class="main-frame">
+      <div class="empty-note-frame">
+        <div class="empty-note-frame__graphic-section">
+          <img src="src/assets/empty-page-graphic.svg" alt="" class="graphic-section__graphic">
+        </div>
+
+        <div class="empty-note-frame__text-frame">
+
+          <div class="empty-note-frame__text-section">
+              <p class="empty-note-frame__text">Go to YouTube, copy the link for a video you want to learn from and take some notes.</p>
+              <p class="empty-note-frame__text">Paste the link below and click on the upload button to start taking notes.</p>
+          </div>
+
+          <div class="empty-note-frame__input-section">
+
+            <!-- <label for="input-1">Add a video link from YouTube</label> -->
+            <form class="empty-note-frame__input-frame" id="link-input">
+  
+              <input id="input-1" class="empty-note-frame__input-text" type="text" placeholder="Example: https://youtu.be/dQw4w9WgXcQ?si=JH8X01fDu3W-UdRA">
+              <span class="form-divider"></span>
+              <button id="formBtn" form="link-input" type="button"><i class="empty-note-frame__input-btn fa-regular fa-share-from-square"></i></button>
+  
+            </form>
+  
+            <div class="empty-note-frame__error"><p id="input-error-text"></p></div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <main class="main-frame hidden">
         <div class="note-frame">
 
           <div class="note-frame__heading">
@@ -209,7 +239,7 @@
 
             <div class="video-frame">
               <div class="video-frame__container">
-                <iframe frameborder="0" id="video-player" src="https://www.youtube.com/embed/tgbNymZ7vqY?rel=0&fs=0&iv_load_policy=3&controls=1"></iframe>
+                <iframe frameborder="0" id="video-player"></iframe>
               </div>
 
           <script type="text/javascript">
@@ -222,11 +252,13 @@
             function onYouTubeIframeAPIReady() {
               player = new YT.Player('video-player', {
                   events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
+                    'onReady': loadVideoById,
+                    // 'onStateChange': onPlayerStateChange
                   }
               });
             }
+
+            function loadVideoById(id) {}
             // function onPlayerReady(event) {}
             // function onPlayerStateChange(event) {}
           </script>
@@ -234,6 +266,7 @@
             </div>
       </main>
         
+    <script src="new-note.js"></script>
     <script src="add-topic.js"></script>
     <script type="module" src="/src/script.js"></script>
     <script src="https://kit.fontawesome.com/dcafb63ef6.js" crossorigin="anonymous"></script>

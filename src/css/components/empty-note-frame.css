@@ -1,0 +1,118 @@
+@import url("/src/css/base/veriables.css");
+
+.form-divider {
+    background-color: var(--divider-color);
+    height: 16px;
+    width: 1px;
+}
+
+.empty-note-frame__text-frame {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 25rem;
+    align-items: center;
+    
+    gap: 1rem;
+}
+
+.empty-note-frame__text-section {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+
+.empty-note-frame__text {
+	align-self: center;
+}
+
+.empty-note-frame__input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+}
+
+#input-error-text {
+    color: var(--failure-color);
+    font-size: 10px;
+}
+
+.empty-note-frame__input-frame {
+	display: flex;
+	flex-direction: row;
+    gap: 16px;
+	width: 100%;
+	justify-content: space-between;
+	background-color: var(--secondary-bg-color);
+	border-radius: var(--border-size-1);
+    border-style: solid;
+    border-radius: var(--border-size-1);
+    border-width: var(--border-width-1);
+    border-color: var(--secondary-bg-color);
+	padding: 12px 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* .empty-note-frame__input-frame:has(input:invalid){
+    border-color: var(--failure-color);
+} */
+
+.empty-note-frame__input-text {
+	cursor: text;
+	display: flex;
+    width: 95%;
+    opacity: 70%;
+    overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.empty-note-frame__input-text:hover {
+    opacity: 95%;
+}
+
+.empty-note-frame__input-btn {
+    opacity: 30%;
+}
+
+.empty-note-frame__input-btn:hover {
+    opacity: 55%;
+}
+
+.empty-note-frame__input-frame:has(.empty-note-frame__input-text:focus) {
+    border-color: var(--main-stroke-color);
+
+
+    input::placeholder, 
+    textarea::placeholder {
+        opacity: 0;
+    }
+    
+
+    @supports selector(::placeholder) {
+    .empty-note-frame__input-text::after {
+        visibility: hidden;
+        }
+    }
+
+    @supports selector(::-webkit-input-placeholder) {
+    .empty-note-frame__input-text::-webkit-input-placeholder {
+        visibility: hidden;
+        }
+    }
+
+    .empty-note-frame__input-btn {
+        opacity: 55%;
+    }
+    .empty-note-frame__input-btn:hover {
+        opacity: 100%;
+    }
+}
+
+
+/* .empty-note-frame__input-frame:has(input:invalid){
+    border-color: var(--failure-color);
+    } */

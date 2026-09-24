@@ -277,3 +277,87 @@ document.querySelector('.add-topic-btn').addEventListener('click', function() {
 // Editor.on('selectionUpdate', () => {
 //   document.querySelector('#bold-button').classList.toggle('is-active', Editor.isActive('bold'))
 // })
+
+const formBtn = document.getElementById('formBtn')
+
+const form = document.getElementById('link-input')
+const formFrame = document.querySelector('.empty-note-frame__input-frame')
+const errorElement = document.getElementById('input-error-text')
+
+const youtu = 'youtu'
+const youtube = 'youtube'
+
+const mainFrame = document.querySelector('.main-frame')
+const emptyNoteFrame = document.querySelector('.empty-note-frame')
+
+const videoPlayer = document.getElementById('video-player')
+
+// Link input form validation
+formBtn.addEventListener('click' , (e) => {
+
+    const link = document.getElementById('input-1').value.trim()
+    
+    let messages = [];
+
+    if (link === '' || link == null) {
+
+        messages.push("Youtube video link is required! - Please paste a video link from YouTube.")
+
+    } else if (link.includes(youtu) || link.includes(youtube)) {
+
+        let videoId;
+
+        if (link.includes(youtube)) {
+
+            
+            let firstPart;
+            firstPart = link.split("=")[1]
+            videoId = firstPart.split("&")[0]
+            // console.log(videoId)
+            // window.prompt(videoId)
+
+            loadVideoById(videoId)
+            
+            videoPlayer.setAttribute('src', link)
+            emptyNoteFrame.classList.add('hidden')
+            mainFrame.classList.remove('hidden')
+            
+        } else {
+            let firstPart;
+            firstPart = link.split("/")[3]
+            videoId = firstPart.split("?")[0]
+            // console.log(videoId)
+            // window.prompt(videoId)
+            
+            loadVideoById(videoId)
+            videoPlayer.setAttribute('src', link)
+            emptyNoteFrame.classList.add('hidden')
+            mainFrame.classList.remove('hidden')
+
+        }
+
+    } else {
+
+        messages.push("Youtube video link is invalid - Please paste a valid Youtube video link") 
+
+    }
+
+    if (messages.length > 0) {
+        e.preventDefault()
+        errorElement.innerText = messages.join(', ')
+        formFrame.setAttribute('style', 'border-color: var(--failure-color)')
+    }
+
+    // const videoId = link
+
+})
+    
+
+// function newNote() {
+
+//     console.log("Submeted")
+
+//     link = document.getElementById("input-1").value
+    
+//     console.log(link)
+// }

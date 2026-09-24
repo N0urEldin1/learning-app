@@ -5,6 +5,7 @@
 @import url("./components/note-frame__heading.css");
 @import url("./components/note-frame__notes.css");
 @import url("./components/navbar-frame.css");
+@import url("./components/empty-note-frame.css");
 
 
 @import url("./elements/divider.css");
@@ -73,10 +74,6 @@ aside {
 	border-color: var(--main-stroke-color);
 }
 
-.hidden {
-	display: none;
-}
-
 /* 
 section {
 	width: 100%;
@@ -100,6 +97,13 @@ section {
 
 
 /* Elements */
+.empty-note-frame {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	margin: auto auto;
+}
 
 .navbar-frame {
 	display: flex;
@@ -240,4 +244,8 @@ iframe {
 		margin-bottom: 0px;
 	}
 
+}
+
+.hidden {
+	display: none;
 }
