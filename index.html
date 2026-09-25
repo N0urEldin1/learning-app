@@ -250,15 +250,9 @@
 
             var player;
             function onYouTubeIframeAPIReady() {
-              player = new YT.Player('video-player', {
-                  events: {
-                    'onReady': loadVideoById,
-                    // 'onStateChange': onPlayerStateChange
-                  }
-              });
+              player = new YT.Player('video-player');
             }
 
-            function loadVideoById(id) {}
             // function onPlayerReady(event) {}
             // function onPlayerStateChange(event) {}
           </script>
@@ -266,7 +260,6 @@
             </div>
       </main>
         
-    <script src="new-note.js"></script>
     <script src="add-topic.js"></script>
     <script type="module" src="/src/script.js"></script>
     <script src="https://kit.fontawesome.com/dcafb63ef6.js" crossorigin="anonymous"></script>

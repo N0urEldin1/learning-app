@@ -287,11 +287,6 @@ const errorElement = document.getElementById('input-error-text')
 const youtu = 'youtu'
 const youtube = 'youtube'
 
-const mainFrame = document.querySelector('.main-frame')
-const emptyNoteFrame = document.querySelector('.empty-note-frame')
-
-const videoPlayer = document.getElementById('video-player')
-
 // Link input form validation
 formBtn.addEventListener('click' , (e) => {
 
@@ -299,65 +294,59 @@ formBtn.addEventListener('click' , (e) => {
     
     let messages = [];
 
+    // Form validation - Empty submission
     if (link === '' || link == null) {
-
         messages.push("Youtube video link is required! - Please paste a video link from YouTube.")
 
+    // Valid YouTube link
     } else if (link.includes(youtu) || link.includes(youtube)) {
 
-        let videoId;
+        let videoId = getId(link)
 
-        if (link.includes(youtube)) {
+        newNote(videoId)
 
-            
-            let firstPart;
-            firstPart = link.split("=")[1]
-            videoId = firstPart.split("&")[0]
-            // console.log(videoId)
-            // window.prompt(videoId)
-
-            loadVideoById(videoId)
-            
-            videoPlayer.setAttribute('src', link)
-            emptyNoteFrame.classList.add('hidden')
-            mainFrame.classList.remove('hidden')
-            
-        } else {
-            let firstPart;
-            firstPart = link.split("/")[3]
-            videoId = firstPart.split("?")[0]
-            // console.log(videoId)
-            // window.prompt(videoId)
-            
-            loadVideoById(videoId)
-            videoPlayer.setAttribute('src', link)
-            emptyNoteFrame.classList.add('hidden')
-            mainFrame.classList.remove('hidden')
-
-        }
-
+    // Invalid link
     } else {
-
         messages.push("Youtube video link is invalid - Please paste a valid Youtube video link") 
-
     }
 
+    // Show error message
     if (messages.length > 0) {
         e.preventDefault()
         errorElement.innerText = messages.join(', ')
         formFrame.setAttribute('style', 'border-color: var(--failure-color)')
     }
 
-    // const videoId = link
-
 })
-    
 
-// function newNote() {
+// YouTube video Id extraction form url
+function getId(link) {
 
-//     console.log("Submeted")
+    let videoId;
 
-//     link = document.getElementById("input-1").value
-    
-//     console.log(link)
-// }
+        if (link.includes(youtube)) {
+            let firstPart;
+            firstPart = link.split("=")[1]
+            videoId = firstPart.split("&")[0]
+        } else if (link.includes(youtu)) {
+            let firstPart;
+            firstPart = link.split("/")[3]
+            videoId = firstPart.split("?")[0]
+        }
+
+    return videoId
+}
+
+// New note functionality - Set the video player src and unhide the main frame
+function newNote(videoId) {
+
+    const mainFrame = document.querySelector('.main-frame')
+    const emptyNoteFrame = document.querySelector('.empty-note-frame')
+    const videoPlayer = document.getElementById('video-player')
+
+    videoPlayer.setAttribute('src', "https://www.youtube.com/embed/" + videoId)
+
+    emptyNoteFrame.classList.add('hidden')
+    mainFrame.classList.remove('hidden')
+
+}
