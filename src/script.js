@@ -280,7 +280,6 @@ document.querySelector('.add-topic-btn').addEventListener('click', function() {
 
 const formBtn = document.getElementById('formBtn')
 
-const form = document.getElementById('link-input')
 const formFrame = document.querySelector('.empty-note-frame__input-frame')
 const errorElement = document.getElementById('input-error-text')
 
@@ -349,4 +348,16 @@ function newNote(videoId) {
     emptyNoteFrame.classList.add('hidden')
     mainFrame.classList.remove('hidden')
 
+}
+
+// Prevent link breaks in topic title and heading content editable divs
+const editableDiv = document.querySelectorAll('.no-break');
+
+for (let i = 0; i < editableDiv.length; i++) {
+    
+    editableDiv[i].addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+    e.preventDefault(); // Stop line break
+    }
+});
 }
