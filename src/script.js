@@ -361,3 +361,10 @@ for (let i = 0; i < editableDiv.length; i++) {
     }
 });
 }
+
+// Prevent form submission using Enter
+formFrame.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+    }
+})
