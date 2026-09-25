@@ -286,37 +286,42 @@ const errorElement = document.getElementById('input-error-text')
 const youtu = 'youtu'
 const youtube = 'youtube'
 
-// Link input form validation
+// Form event listener
 formBtn.addEventListener('click' , (e) => {
+    formValidation(e)    
+})
+
+// Link input form validation
+function formValidation(e) {
 
     const link = document.getElementById('input-1').value.trim()
     
     let messages = [];
-
+    
     // Form validation - Empty submission
     if (link === '' || link == null) {
         messages.push("Youtube video link is required! - Please paste a video link from YouTube.")
-
+    
     // Valid YouTube link
     } else if (link.includes(youtu) || link.includes(youtube)) {
-
+    
         let videoId = getId(link)
-
+    
         newNote(videoId)
-
+    
     // Invalid link
     } else {
         messages.push("Youtube video link is invalid - Please paste a valid Youtube video link") 
     }
-
+    
     // Show error message
     if (messages.length > 0) {
         e.preventDefault()
         errorElement.innerText = messages.join(', ')
         formFrame.setAttribute('style', 'border-color: var(--failure-color)')
     }
-
-})
+    
+}
 
 // YouTube video Id extraction form url
 function getId(link) {
@@ -366,5 +371,6 @@ for (let i = 0; i < editableDiv.length; i++) {
 formFrame.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
+        formValidation(e);
     }
 })
