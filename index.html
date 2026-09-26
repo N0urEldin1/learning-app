@@ -9,7 +9,7 @@
   </head>
   <body>
 
-      <aside class="navbar-frame">
+      <aside class="navbar-frame main-stroke">
         <div class="navigation"> 
           <button class="navigation__logo default"> 
             <span class="logo-icon"></span>
@@ -47,9 +47,9 @@
         <div class="empty-note-frame__graphic-section">
           <img src="src/assets/empty-page-graphic.svg" alt="" class="graphic-section__graphic">
         </div>
-
+        
         <div class="empty-note-frame__text-frame">
-
+          
           <div class="empty-note-frame__text-section">
               <p class="empty-note-frame__text">Go to YouTube, copy the link for a video you want to learn from and take some notes.</p>
               <p class="empty-note-frame__text">Paste the link below and click on the upload button to start taking notes.</p>
@@ -59,7 +59,7 @@
 
             <!-- <label for="input-1">Add a video link from YouTube</label> -->
             <form class="empty-note-frame__input-frame" id="link-input">
-  
+              
               <input id="input-1" class="empty-note-frame__input-text" type="text" placeholder="Example: https://youtu.be/dQw4w9WgXcQ?si=JH8X01fDu3W-UdRA">
               <span class="form-divider"></span>
               <button id="formBtn" form="link-input" type="button"><i class="empty-note-frame__input-btn fa-regular fa-share-from-square"></i></button>
@@ -73,9 +73,7 @@
         </div>
       </div>
 
-      <main class="main-frame">
-
-        <div class="progress-bar-frame">
+      <div class="progress-bar-frame">
               <div class="progress-bar main-stroke">
                 <p class="progress-bar__text text-very-small">Progress: 0/1 topics completed</p>
                 <div class="progress-bar__line">
@@ -86,117 +84,113 @@
               </div>
         </div>
 
-        <div class="note-frame__notes">
+      <div class="notes-frame"> <!-- note-frame__notes -->
 
-            <div class="notes">
+          <div class="notes">
 
-                <div class="note main-stroke">
-
-                <div class="title-section">
-
-                    <div class="title-section__left">
-                      <div class="topic-title">
-                        <span class="topic-title__unckecked checkmark"></span>
-                        <div class="topic-title__ckecked checkmark hidden">
-                          <i class="fa-solid fa-circle-check"></i>
-                        </div>
+            <div class="note main-stroke">
+              
+              <div class="title-section">
+                
+                  <div class="title-section__left">
+                    <div class="topic-title">
+                      <span class="topic-title__unckecked checkmark"></span>
+                      <div class="topic-title__ckecked checkmark hidden">
+                        <i class="fa-solid fa-circle-check"></i>
                       </div>
-                      <div contenteditable="true" spellcheck="false" data-placeholder="Write the topic name" class="topic-title__title no-break" name="" id=""></div>
+                    </div>
+                    <div contenteditable="true" spellcheck="false" data-placeholder="Write the topic name" class="topic-title__title no-break" name="" id=""></div>
+                  </div>
+
+                  <div class="title-section__right">
+                    
+                    <button type="button" class="options default">
+                      <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
+                    </button>
+                    
+                    <button type="button" class="accordion default">
+                      <i class="collapsed-note__angle fa-solid fa-angle-down"></i>
+                    </button>
+
+                    <div class="topic-icons">
                     </div>
 
-                    <div class="title-section__right">
-                      
-                      <button type="button" class="options default">
-                        <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
-                      </button>
-                      
-                      <button type="button" class="accordion default">
-                        <i class="collapsed-note__angle fa-solid fa-angle-down"></i>
-                      </button>
+                  </div>
 
-                      <div class="topic-icons">
-                      </div>
-
-                    </div>
-
-                </div>
-
-                <div class="note-section"> <!-- note-section -->
-                      
-                      <div class="note-section__note"> <!-- note-section__note -->
-                        <div class="note__frame"> <!-- note__frame -->
-                          
-                          <!-- Text editor icons - Feuture feature -->
-                          <!-- <div class="note-section-icons">
-                            <i class="note-section-icons__icon fa-solid fa-italic"></i>
-                            <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
-                          </div> -->
-  
-                          <div contenteditable="true" spellcheck="true" data-placeholder="Start typing your notes..." class="note__text" name="" id=""></div> <!-- note__text -->
-                          
-                          <!-- TipTap setup - Feuture feature -->
-                          <!-- <div class="editor-container">
-                            <div class="toolbar" id="toolbar">
-                              <button id="bold-button" data-tiptap-button="bold">Bold</button>
-                              <button data-tiptap-button="italic">Italic</button>
-                              <button data-tiptap-button="strike">Strike</button>
-                              <button data-tiptap-button="code">Code</button>
-                              <button data-tiptap-button="h1">H1</button>
-                              <button data-tiptap-button="h2">H2</button>
-                              <button data-tiptap-button="bulletList">Bullet List</button>
-                              <button data-tiptap-button="orderedList">Ordered List</button>
-                              <button data-tiptap-button="blockquote">Blockquote</button>
-                              <button data-tiptap-button="codeBlock">Code Block</button>
-                            </div>
-                            <div id="editor"></div>
-                          </div> -->
-  
-                        </div>
-
-                      </div>
-                  
-                    </div>
-
-                </div>   
-
-                <div class="divider">
-                  <span class="line"></span>
-                </div>
-
-                </div>
-  
-                <div class="add-topic-frame">
-                  <button onclick="addTopic()" type="button" class="add-topic-btn">
-                    <h2>Add a topic</h2>
-                  </button>
-                </div>
-
-        </div>
-
-
-        <div class="video-frame">
-              <div class="video-frame__container">
-                <iframe frameborder="0" id="video-player"></iframe>
               </div>
 
-          <script type="text/javascript">
-            var tag = document.createElement('script');
-            tag.src = 'https://www.youtube.com/iframe_api';
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+              <div class="note-section"> <!-- note-section -->
+                    
+                    <div class="note-section__note"> <!-- note-section__note -->
+                      <div class="note__frame"> <!-- note__frame -->
+                        
+                        <!-- Text editor icons - Feuture feature -->
+                        <!-- <div class="note-section-icons">
+                          <i class="note-section-icons__icon fa-solid fa-italic"></i>
+                          <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
+                        </div> -->
 
-            var player;
-            function onYouTubeIframeAPIReady() {
-              player = new YT.Player('video-player');
-            }
+                        <div contenteditable="true" spellcheck="true" data-placeholder="Start typing your notes..." class="note__text" name="" id=""></div> <!-- note__text -->
+                        
+                        <!-- TipTap setup - Feuture feature -->
+                        <!-- <div class="editor-container">
+                          <div class="toolbar" id="toolbar">
+                            <button id="bold-button" data-tiptap-button="bold">Bold</button>
+                            <button data-tiptap-button="italic">Italic</button>
+                            <button data-tiptap-button="strike">Strike</button>
+                            <button data-tiptap-button="code">Code</button>
+                            <button data-tiptap-button="h1">H1</button>
+                            <button data-tiptap-button="h2">H2</button>
+                            <button data-tiptap-button="bulletList">Bullet List</button>
+                            <button data-tiptap-button="orderedList">Ordered List</button>
+                            <button data-tiptap-button="blockquote">Blockquote</button>
+                            <button data-tiptap-button="codeBlock">Code Block</button>
+                          </div>
+                          <div id="editor"></div>
+                        </div> -->
 
-            // function onPlayerReady(event) {}
-            // function onPlayerStateChange(event) {}
-          </script>
+                      </div>
+                    </div>
+                
+                </div>
 
-        </div>
+              </div>   
 
-      </main>
+              <div class="divider">
+                <span class="line"></span>
+              </div>
+
+          </div>
+
+          <div class="add-topic-frame">
+                <button onclick="addTopic()" type="button" class="add-topic-btn">
+                  <h2>Add a topic</h2>
+                </button>
+          </div>
+
+      </div>
+
+      <div class="video-frame">
+            <div class="video-frame__container">
+              <iframe frameborder="0" id="video-player"></iframe>
+            </div>
+
+        <script type="text/javascript">
+          var tag = document.createElement('script');
+          tag.src = 'https://www.youtube.com/iframe_api';
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video-player');
+          }
+
+          // function onPlayerReady(event) {}
+          // function onPlayerStateChange(event) {}
+        </script>
+
+      </div>
         
     <script src="add-topic.js"></script>
     <script type="module" src="/src/script.js"></script>
