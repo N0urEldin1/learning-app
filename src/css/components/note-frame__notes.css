@@ -3,13 +3,13 @@
 @import url("/src/css/base/veriables.css");
 
 .note-frame__notes {
+	grid-area: note-frame;
 	display: flex;
 	flex-direction: column;
 	min-width: 0;
 	min-height: 0;
 	overflow-y: auto;
 	overflow-x: hidden;
-	padding: 8px 32px;
 	padding-bottom: 64PX;
 	gap: 8px;
 	width: 100%;
@@ -27,6 +27,7 @@
 	flex-direction: column;
 	width: 100%;
 	height: fit-content;
+	gap: 8px;
 }
 
 .note {
@@ -36,16 +37,17 @@
 	width: 100%;
 	height: fit-content;
 	/* margin-bottom: 8px; */
+	overflow: clip;
 }
 
 .title-section {
 	display: flex;
 	flex-direction: row;
     align-items: center;
-	width: 100%;
+	width: auto;
 	height: fit-content;
 	justify-content: space-between;
-	margin: 8px 0px;
+	margin: 8px;
 }
 
 .title-section__left {
@@ -76,10 +78,10 @@
 .topic-title__unckecked {
     height: 14.0167px;
     width: 14.0167px;
-    border-radius: 2px;
+    border-radius: 50%;
     cursor: pointer;
     border-style: solid;
-    border-width: 3.2px;
+    border-width: 2px;
     border-color: var(--icon-color-2);
     /* background-color: var(--icon-color-2); */
 }
@@ -110,11 +112,13 @@
 	display: none;
 	flex-direction: column;
 	gap: var(--spacing-4);
-	margin: 12px 0px 8px 0px;
+	/* margin: 12px 0px 8px 0px; */
 	width: 100%;
-	padding: 0 30px;
+	/* padding: 0 30px; */
 	height: 0px;
 	overflow: hidden;
+	background-color: var(--note-bg-color);
+	border-top: solid 0.8px var(--main-stroke-color);
 }
 
 .active {
@@ -158,7 +162,10 @@
 	font-size: var(--font-size-h3);
 	font-weight: 300;
 }
-
+.note__text {
+	padding: 0 8px;
+	text-overflow: ellipsis;
+}
 .note__frame {
 	display: flex;
 	flex-direction: column;
@@ -166,7 +173,7 @@
 	width: 100%;
 	height: fit-content;
 	background-color: var(--note-bg-color);
-	border-radius: var(--border-size-1);
+	/* border-radius: var(--border-size-1); */
 	padding: 16px 12px;
 }
 
