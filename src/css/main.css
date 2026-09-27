@@ -90,6 +90,21 @@ body {
 	font-weight: 200;
 }
 
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.active {
+	display: flex;
+	height: fit-content;
+}
+
 
 /* Nav bar */
 aside {
@@ -99,8 +114,6 @@ aside {
 }
 
 .navbar-frame {
-	display: flex;
-	flex-direction: row;
 	height: 100%;
 	width: fit-content;
 	background-color: var(--secondary-bg-color);
@@ -110,8 +123,6 @@ aside {
 /* Empty note screen */
 .empty-note-frame {
 	grid-area: main;
-	display: flex;
-	flex-direction: column;
 	gap: 2rem;
 	align-items: center;
 	height: fit-content;
@@ -128,8 +139,6 @@ aside {
 /* Main notes frame */
 .notes-frame {
 	grid-area: note-frame;
-	display: flex;
-	flex-direction: column;
 	height: calc(100vh - 10%);;
 	width: clamp(33%, 100%, 100%);
 	margin-bottom: 16px;

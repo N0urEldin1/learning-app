@@ -9,9 +9,9 @@
   </head>
   <body>
 
-      <aside class="navbar-frame main-stroke">
-        <div class="navigation"> 
-          <button class="navigation__logo default"> 
+      <aside class="navbar-frame main-stroke flex-row">
+        <div class="navigation flex-column"> 
+          <button class="navigation__logo flex-column default"> 
             <span class="logo-icon"></span>
           </button>
 
@@ -19,7 +19,7 @@
 
            <div class="navigation__main">
 
-             <button class="navigation-icons__icon"> 
+             <button class="navigation-icons__icon flex-column"> 
                <div class="nav-icon-frame default">
                  <i class="fa-solid fa-plus"></i>
                 </div>
@@ -31,8 +31,8 @@
             
              <div class="navigation__buttom">
 
-              <button class="navigation-icons__icon"> 
-               <div class="nav-icon-frame default">
+              <button class="navigation-icons__icon flex-column"> 
+               <div class="nav-icon-frame flex-rowdefault">
                  <i class="fa-solid fa-heart"></i>
                 </div>
                 <span class="nav-icon__text">Feedback</span>
@@ -43,22 +43,22 @@
         </div>
       </aside>
 
-      <div class="empty-note-frame hidden">
+      <div class="empty-note-frame flex-column hidden">
         <div class="empty-note-frame__graphic-section">
           <img src="src/assets/empty-page-graphic.svg" alt="" class="graphic-section__graphic">
         </div>
         
-        <div class="empty-note-frame__text-frame">
+        <div class="empty-note-frame__text-frame flex-column">
           
-          <div class="empty-note-frame__text-section">
+          <div class="empty-note-frame__text-section flex-column">
               <p class="empty-note-frame__text">Go to YouTube, copy the link for a video you want to learn from and take some notes.</p>
               <p class="empty-note-frame__text">Paste the link below and click on the upload button to start taking notes.</p>
           </div>
 
-          <div class="empty-note-frame__input-section">
+          <div class="empty-note-frame__input-section flex-column">
 
             <!-- <label for="input-1">Add a video link from YouTube</label> -->
-            <form class="empty-note-frame__input-frame" id="link-input">
+            <form class="empty-note-frame__input-frame flex-row" id="link-input">
               
               <input id="input-1" class="empty-note-frame__input-text" type="text" placeholder="Example: https://youtu.be/dQw4w9WgXcQ?si=JH8X01fDu3W-UdRA">
               <span class="form-divider"></span>
@@ -74,9 +74,9 @@
       </div>
 
       <div class="progress-bar-frame">
-              <div class="progress-bar main-stroke">
+              <div class="progress-bar flex-row main-stroke">
                 <p class="progress-bar__text text-very-small">Progress: 0/1 topics completed</p>
-                <div class="progress-bar__line">
+                <div class="progress-bar__line flex-row">
                   <span class="line__gray"></span>
                   <span class="line__green"></span>
                 </div>
@@ -84,15 +84,15 @@
               </div>
         </div>
 
-      <div class="notes-frame"> <!-- note-frame__notes -->
+      <div class="notes-frame flex-column"> <!-- note-frame__notes -->
 
-          <div class="notes">
+          <div class="notes flex-column">
 
-            <div class="note main-stroke">
+            <div class="note flex-column main-stroke">
               
-              <div class="title-section">
+              <div class="title-section flex-row">
                 
-                  <div class="title-section__left">
+                  <div class="title-section__left flex-row">
                     <div class="topic-title">
                       <span class="topic-title__unckecked checkmark"></span>
                       <div class="topic-title__ckecked checkmark hidden">
@@ -102,7 +102,7 @@
                     <div contenteditable="true" spellcheck="false" data-placeholder="Write the topic name" class="topic-title__title no-break" name="" id=""></div>
                   </div>
 
-                  <div class="title-section__right">
+                  <div class="title-section__right flex-row">
                     
                     <button type="button" class="options default">
                       <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
@@ -112,17 +112,14 @@
                       <i class="collapsed-note__angle fa-solid fa-angle-down"></i>
                     </button>
 
-                    <div class="topic-icons">
-                    </div>
-
                   </div>
 
               </div>
 
               <div class="note-section"> <!-- note-section -->
                     
-                    <div class="note-section__note"> <!-- note-section__note -->
-                      <div class="note__frame"> <!-- note__frame -->
+                    <div class="note-section__note flex-column"> <!-- note-section__note -->
+                      <div class="note__frame flex-column"> <!-- note__frame -->
                         
                         <!-- Text editor icons - Feuture feature -->
                         <!-- <div class="note-section-icons">
@@ -162,7 +159,7 @@
 
           </div>
 
-          <div class="add-topic-frame">
+          <div class="add-topic-frame flex-row">
                 <button onclick="addTopic()" type="button" class="add-topic-btn">
                   <h2>Add a topic</h2>
                 </button>
