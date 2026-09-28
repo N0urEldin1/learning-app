@@ -1,0 +1,16 @@
+
+/* Icons */
+.fa-ellipsis {
+	padding: 2px 0.5px;
+} 
+
+.fa-angle-down {
+	padding: 2px 0.5px;
+	transition: all 0.3s ease;
+}
+
+.fa-circle-check {
+	color: var(--success-color);
+	height: 100%;
+  	width: 100%;
+}

@@ -1,25 +1,20 @@
 @import url("./base/reset.css");
 @import url("./base/typography.css");
 @import url("./base/veriables.css");
+@import url("./base/layout.css");
+@import url("./base/utility.css");
+@import url("./base/icons.css");
 
-@import url("./components/note-frame__heading.css");
-@import url("./components/note-frame__notes.css");
-@import url("./components/navbar-frame.css");
-@import url("./components/empty-note-frame.css");
+@import url("./components/notes.css");
+@import url("./components/navbar.css");
+@import url("./components/empty-note.css");
+@import url("./components/progeress-bar.css");
 
 @import url("./elements/divider.css");
 
 
 /* Main control */
 body {
-	display: grid;
-	grid-template-areas:
-	"nav progress-bar progress-bar"
-	"nav note-frame video-frame";
-	grid-template-columns: 50px 2fr auto;
-  	grid-template-rows: auto 1fr;
-	row-gap: 8px;
-	column-gap: 8px;
 	text-wrap: balance;
 	font: var(--font-size-p) var(--font-family);
 	background: var(--main-bg-color);
@@ -65,182 +60,4 @@ body {
   .note-frame__notes::-webkit-scrollbar-thumb:hover {
     background: #555555;
   }
-}
-
-
-/* Utility classes */
-.main-stroke {
-	border-style: solid;
-	border-radius: var(--border-size-1);
-	border-width: var(--border-width-1);
-	border-color: var(--main-stroke-color);
-}
-
-.default:hover {
-	border-radius: 2px;
-	background-color: var(--hover-bg-color);
-}
-
-.option {
-	display: flex;
-	width: 100%;
-	min-width: 6rem;
-	padding: 4px 6px;
-	font-size: 0.7rem;
-	font-weight: 200;
-}
-
-.flex-column {
-	display: flex;
-	flex-direction: column;
-}
-
-.flex-row {
-	display: flex;
-	flex-direction: row;
-}
-
-.active {
-	display: flex;
-	height: fit-content;
-}
-
-
-/* Nav bar */
-aside {
-	grid-area: nav;
-	position: fixed;
-	max-height: calc(100dvh - 1rem);
-}
-
-.navbar-frame {
-	height: 100%;
-	width: fit-content;
-	background-color: var(--secondary-bg-color);
-}
-
-
-/* Empty note screen */
-.empty-note-frame {
-	grid-area: main;
-	gap: 2rem;
-	align-items: center;
-	height: fit-content;
-	margin: 100px auto;
-}
-
-
-/* Progress bar */
-.progress-bar-frame {
-	grid-area: progress-bar;
-}
-
-
-/* Main notes frame */
-.notes-frame {
-	grid-area: note-frame;
-	height: calc(100vh - 10%);;
-	width: clamp(33%, 100%, 100%);
-	margin-bottom: 16px;
-	padding-right: 8px;
-	min-height: 0;
-	overflow-y: auto;
-	overflow-x: hidden;
-	gap: 8px;
-}
-
-@media (width <= 55rem) {
-	.notes-frame {
-		max-height: 60vh;
-		height: auto;
-		overflow-y: auto;
-	}
-}
-
-/* Video frame */
-.video-frame {
-	grid-area: video-frame;
-	height: fit-content;
-	min-width: calc(100vw / 3);
-	max-width: 50rem;
-}
-
-.video-frame__container {
-  	position: relative;
-  	overflow: hidden;
-  	aspect-ratio: 16 / 9;
-  	width: 100%;
-  	background-color: var(--secondary-bg-color);
-	border-width: 0.8px;
-	border-color: var(--main-stroke-color);
-	border-style: solid;
-	border-radius: 8px;
-	padding: 8px;
-}
-
-iframe {
-	border: none;
-	border-radius: 6px;
-  	width: 100%;
-  	height: 100%;
-}
-
-
-/* Icons */
-.fa-ellipsis {
-	padding: 2px 0.5px;
-} 
-
-.fa-angle-down {
-	padding: 2px 0.5px;
-	transition: all 0.3s ease;
-}
-
-.fa-circle-check {
-	color: var(--success-color);
-	height: 100%;
-  	width: 100%;
-}
-
-
-@media (width <= 70rem) {
-
-	html {
-		font-size: 85%;
-	}
-
-	body {
-		grid-template-areas:
-		"nav progress-bar"
-		"nav video-frame"
-		"nav note-frame";
-		grid-template-columns: 50px 1fr;
-		grid-template-rows: auto;
-		justify-content: start;
-  		align-content: start;
-	}
-
-	
-	.notes-frame {
-		margin: auto auto;
-		width: 100%;
-		align-self: center;
-		margin-top: 8px;
-		margin-bottom: 8px;
-		/* padding: 0 24px; */
-	}
-	
-	.video-frame {
-		margin: auto auto;
-		max-width: 60%;
-	}
-
-	.progress-bar-frame {
-		height: fit-content;
-	}
-
-}
-
-.hidden {
-	display: none;
 }

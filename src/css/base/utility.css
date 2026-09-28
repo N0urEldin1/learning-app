@@ -1,0 +1,42 @@
+
+
+/* Utility classes */
+.main-stroke {
+	border-style: solid;
+	border-radius: var(--border-size-1);
+	border-width: var(--border-width-1);
+	border-color: var(--main-stroke-color);
+}
+
+.default:hover {
+	border-radius: 2px;
+	background-color: var(--hover-bg-color);
+}
+
+.option {
+	display: flex;
+	width: 100%;
+	min-width: 6rem;
+	padding: 4px 6px;
+	font-size: 0.7rem;
+	font-weight: 200;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.active {
+	display: flex;
+	height: fit-content;
+}
+
+.hidden {
+	display: none;
+}
