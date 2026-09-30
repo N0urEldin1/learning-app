@@ -1,0 +1,83 @@
+<div class="notes-frame flex-column"> <!-- note-frame__notes -->
+  
+            <div class="notes flex-column">
+  
+              <div class="note flex-column main-stroke">
+                
+                <div class="title-section flex-row">
+                  
+                    <div class="title-section__left flex-row">
+                      <div class="topic-title">
+                        <span class="topic-title__unckecked checkmark"></span>
+                        <div class="topic-title__ckecked checkmark hidden">
+                          <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                      </div>
+                      <div contenteditable="true" spellcheck="false" data-placeholder="Write the topic name" class="topic-title__title no-break" name="" id=""></div>
+                    </div>
+  
+                    <div class="title-section__right flex-row">
+                      
+                      <button type="button" class="options default">
+                        <i class="collapsed-note__ellipsis fa-solid fa-ellipsis"></i>
+                      </button>
+                      
+                      <button type="button" class="accordion default">
+                        <i class="collapsed-note__angle fa-solid fa-angle-down"></i>
+                      </button>
+  
+                    </div>
+  
+                </div>
+  
+                <div class="note-section"> <!-- note-section -->
+                      
+                      <div class="note-section__note flex-column"> <!-- note-section__note -->
+                        <div class="note__frame flex-column"> <!-- note__frame -->
+                          
+                          <!-- Text editor icons - Feuture feature -->
+                          <!-- <div class="note-section-icons">
+                            <i class="note-section-icons__icon fa-solid fa-italic"></i>
+                            <i class="note-section-icons__icon fa-solid fa-list-ul"></i>
+                          </div> -->
+  
+                          <div contenteditable="true" spellcheck="true" data-placeholder="Start typing your notes..." class="note__text" name="" id=""></div> <!-- note__text -->
+                          
+                          <!-- TipTap setup - Feuture feature -->
+                          <!-- <div class="editor-container">
+                            <div class="toolbar" id="toolbar">
+                              <button id="bold-button" data-tiptap-button="bold">Bold</button>
+                              <button data-tiptap-button="italic">Italic</button>
+                              <button data-tiptap-button="strike">Strike</button>
+                              <button data-tiptap-button="code">Code</button>
+                              <button data-tiptap-button="h1">H1</button>
+                              <button data-tiptap-button="h2">H2</button>
+                              <button data-tiptap-button="bulletList">Bullet List</button>
+                              <button data-tiptap-button="orderedList">Ordered List</button>
+                              <button data-tiptap-button="blockquote">Blockquote</button>
+                              <button data-tiptap-button="codeBlock">Code Block</button>
+                            </div>
+                            <div id="editor"></div>
+                          </div> -->
+  
+                        </div>
+                      </div>
+                  
+                  </div>
+  
+                </div>   
+  
+                <div class="divider">
+                  <span class="line"></span>
+                </div>
+  
+            </div>
+  
+            <div class="add-topic-frame flex-row">
+                  <button onclick="addTopic()" type="button" class="add-topic-btn">
+                    <h2>Add a topic</h2>
+                  </button>
+            </div>
+  
+        </div>
+    <script type="module" src="/src/script.js"></script>

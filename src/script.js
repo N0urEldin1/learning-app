@@ -1,3 +1,5 @@
+console.log("script.js loaded");
+
 document.querySelector('.notes').addEventListener('click', function(event) {
     
     const target = event.target

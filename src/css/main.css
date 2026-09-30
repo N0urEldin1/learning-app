@@ -9,6 +9,7 @@
 @import url("./components/navbar.css");
 @import url("./components/empty-note.css");
 @import url("./components/progeress-bar.css");
+@import url("./components/video-player.css");
 
 @import url("./elements/divider.css");
 
@@ -60,4 +61,10 @@ body {
   .note-frame__notes::-webkit-scrollbar-thumb:hover {
     background: #555555;
   }
+}
+
+
+note-card {
+    display: block;
+    border: 1px solid red;
 }
