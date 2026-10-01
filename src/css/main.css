@@ -2,16 +2,11 @@
 @import url("./base/typography.css");
 @import url("./base/veriables.css");
 @import url("./base/layout.css");
-@import url("./base/utility.css");
 @import url("./base/icons.css");
 
-@import url("./components/notes.css");
-@import url("./components/navbar.css");
-@import url("./components/empty-note.css");
-@import url("./components/progeress-bar.css");
-@import url("./components/video-player.css");
-
 @import url("./elements/divider.css");
+
+@import url("./base/utility.css");
 
 
 /* Main control */

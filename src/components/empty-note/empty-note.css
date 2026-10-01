@@ -1,5 +1,15 @@
 @import url("/src/css/base/veriables.css");
 
+:host {
+    .empty-note-frame {
+	grid-area: main;
+	gap: 2rem;
+	align-items: center;
+	height: fit-content;
+	margin: 100px auto;
+}
+}
+
 .form-divider {
     background-color: var(--divider-color);
     height: 16px;

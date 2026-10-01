@@ -1,4 +1,29 @@
-@import url("/src/css/main.css");
+/* @import url("/src/css/main.css"); */
+
+@import url("src/css/base/utility.css");
+@import url("src/css/base/reset.css");
+@import url("src/css/base/typography.css");
+@import url("src/css/base/veriables.css");
+@import url("src/css/base/layout.css");
+@import url("src/css/base/icons.css");
+
+@import url("src/css/elements/divider.css");
+
+:host {
+    grid-area: nav;
+}
+
+aside {
+	position: fixed;
+	max-height: calc(100dvh - 1rem);
+}
+
+.navbar-frame {
+	height: 100%;
+	width: fit-content;
+	background-color: var(--secondary-bg-color);
+}
+
 
 .navigation {
     align-items: center;

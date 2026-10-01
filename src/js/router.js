@@ -1,5 +1,4 @@
-// import { render404 } from "../pages/404.js";
-
+import { page404 } from "../pages/404.js";
 import { newNotesPage } from "../pages/notes-page.js";
 
 export const route = (e) => {
@@ -10,23 +9,32 @@ export const route = (e) => {
 };
 
 const routes = {
-    // 404: render404,
+    404: page404,
     "/": "/pages/index.html",
     "/about": "/pages/about.html",
     "/lorem": "/pages/lorem.html",
     "/note": newNotesPage
 };
 
-const handleLocation = async () => {
+const handleLocation = () => {
     const path = window.location.pathname;
     const renderPage = routes[path] || render404;
 
     new renderPage()
+
+    const main = document.querySelector('.main')
+    const fontAwesomeScript = document.createElement('script');
+
+    fontAwesomeScript.src = "https://kit.fontawesome.com/dcafb63ef6.js"
+    fontAwesomeScript.crossOrigin = "anonymous"
+
+    main.appendChild(fontAwesomeScript)
+
     // const html = await fetch(route).then((data) => data.text());
     // document.getElementById("main-page").innerHTML = html;
 };
 
-window.onpopstate = handleLocation;
+window.onpopstate =  handleLocation;
 window.route = route;
 
 handleLocation();

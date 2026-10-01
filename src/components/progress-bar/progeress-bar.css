@@ -1,5 +1,19 @@
+@import url("src/css/base/utility.css");
+@import url("src/css/base/reset.css");
+@import url("src/css/base/typography.css");
+@import url("src/css/base/veriables.css");
+@import url("src/css/base/layout.css");
+@import url("src/css/base/icons.css");
 
+@import url("src/css/elements/divider.css");
 
+:host {
+    grid-area: progress-bar;
+}
+
+.progress-bar-frame {
+    opacity: 100%;
+}
 
 .progress-bar {
     gap: var(--spacing-4);

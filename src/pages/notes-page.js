@@ -1,8 +1,8 @@
 
-import { newNote } from "../components/notes/new-note.js";
-import { navigationBar } from "../components/nav-bar/nav-bar.js";
-import { progressBar } from "../components/progress-bar/progress-bar.js";
-import { videoPlayer } from "../components/video-player/video-player.js";
+import newNote from "../components/notes/new-note.js";
+import navigationBar from "../components/nav-bar/nav-bar.js";
+import progressBar from "../components/progress-bar/progress-bar.js";
+import videoPlayer from "../components/video-player/video-player.js";
 
 export function newNotesPage() {
 
@@ -11,6 +11,17 @@ export function newNotesPage() {
     div.classList.add("main")
 
     document.querySelector('#app').append(div)
+    
+    const main = document.querySelector('.main')
+
+
+    const fontAwesomeScript = document.createElement('script');
+
+    fontAwesomeScript.src = "https://kit.fontawesome.com/dcafb63ef6.js"
+    fontAwesomeScript.crossOrigin = "anonymous"
+
+    main.appendChild(fontAwesomeScript)
+
     
     const nav = document.createElement("nav-bar")
     nav.setAttribute('style', "grid-area:nav")
@@ -24,17 +35,16 @@ export function newNotesPage() {
     const video = document.createElement("video-player")
     video.setAttribute('style', "grid-area:video-frame;")
 
-    document.querySelector('.main').append(nav)
-    document.querySelector('.main').append(notes)
-    document.querySelector('.main').append(progress)
-    document.querySelector('.main').append(video)
+    main.append(nav)
+    main.append(notes)
+    main.append(progress)
+    main.append(video)
 
-    const body = document.body
+    // const script = document.createElement('script')
 
-    const script = document.createElement('script')
+    // script.crossOrigin = "anonymous"
+    // script.src = "https://kit.fontawesome.com/dcafb63ef6.js"
+    
+    // main.append(script)
 
-    script.type = "module"
-    script.src = "/src/script.js"
-
-    body.append(script)
 }
