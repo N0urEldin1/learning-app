@@ -4,6 +4,11 @@
 @import url("./base/layout.css");
 @import url("./base/icons.css");
 
+@import url("../components/nav-bar/navbar.css");
+@import url("../components/notes/new-note.css");
+@import url("../components/progress-bar/progeress-bar.css");
+@import url("../components/video-player/video-player.css");
+
 @import url("./elements/divider.css");
 
 @import url("./base/utility.css");

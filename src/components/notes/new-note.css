@@ -172,3 +172,12 @@
     border-color: var(--hover-bg-color);
     /* color: var(--text-color-main) */
 }
+
+.active {
+	display: flex;
+	height: fit-content;
+}
+
+.hidden {
+	display: none;
+}

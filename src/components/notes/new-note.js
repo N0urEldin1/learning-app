@@ -1,13 +1,3 @@
-import loadCSS from "/home/noureldin/code/learning-app/src/js/util/load-css.js"
-
-
-function loadIcons(url, obj) {
-    const script = document.createElement('script');
-    script.src = url
-    script.crossOrigin = "anonymous"
-
-    obj.appendChild(script)
-}
 
 function updateProgress(obj) {
 
@@ -37,7 +27,7 @@ function updateProgress(obj) {
     
     
     // Update progress text
-    const progressTextElement = document.querySelector("#app").querySelector("progress-bar").shadowRoot.querySelector('.progress-bar__text')
+    const progressTextElement = document.querySelector("#app").querySelector("progress-bar").querySelector('.progress-bar__text')
 
     let progressText = progressTextElement.innerText
     
@@ -47,7 +37,7 @@ function updateProgress(obj) {
     
     
     // Update progress line
-    const progressLine = document.querySelector("#app").querySelector("progress-bar").shadowRoot.querySelector('.line__green')
+    const progressLine = document.querySelector("#app").querySelector("progress-bar").querySelector('.line__green')
     
     const width = Math.floor((checkedCount * 100) / noteCount)
     
@@ -55,7 +45,7 @@ function updateProgress(obj) {
     
     
     // Update progress percentage
-    const percentageTextElement = document.querySelector("#app").querySelector("progress-bar").shadowRoot.querySelector('.progress-bar__percentage')
+    const percentageTextElement = document.querySelector("#app").querySelector("progress-bar").querySelector('.progress-bar__percentage')
     
     let percentageText = percentageTextElement.innerText
     
@@ -66,13 +56,7 @@ function updateProgress(obj) {
     return checkedCount
 }
 
-
 export default class newNote extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({mode: "open"});
-        this.render()
-    }
 
     async connectedCallback() {
         await this.render();
@@ -81,14 +65,11 @@ export default class newNote extends HTMLElement {
     async render() {
         const response = await fetch("src/components/notes/new-note.html")
         
-        this.shadowRoot.innerHTML = await response.text()
+        this.innerHTML = await response.text()
         
-        loadCSS('src/components/notes/new-note.css', this.shadowRoot);
-        // loadIcons("https://kit.fontawesome.com/dcafb63ef6.js", this.shadowRoot);
+        this.querySelector('.notes').addEventListener('click', (e) => {this.functionality(e)})
 
-        this.shadowRoot.querySelector('.notes').addEventListener('click', (e) => {this.functionality(e)})
-
-        this.shadowRoot.querySelector('.add-topic-btn').addEventListener('click', (e) => {this.functionalityyy(e)})
+        this.querySelector('.add-topic-btn').addEventListener('click', (e) => {this.functionalityyy(e)})
 
     }
 
@@ -138,12 +119,12 @@ export default class newNote extends HTMLElement {
         }
         
         // Update progress bar
-        updateProgress(this.shadowRoot)   
+        updateProgress(this)   
     }
 
     functionalityyy = () => {
 
-        const notes = document.querySelector("#app").querySelector("new-note").shadowRoot.querySelector(".notes")
+        const notes = document.querySelector("#app").querySelector("new-note").querySelector(".notes")
 
 
         notes.insertAdjacentHTML('beforeend', `
@@ -215,7 +196,7 @@ export default class newNote extends HTMLElement {
         )
 
         // Update progress bar
-        updateProgress(this.shadowRoot) 
+        updateProgress(this) 
     }
     
 
