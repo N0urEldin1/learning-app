@@ -9,7 +9,7 @@ export default class videoPlayer extends HTMLElement {
     }
 
     async render() {
-        const response = await fetch("src/components/video-player/video-player.html")
+        const response = await fetch("/src/components/video-player/video-player.html")
         
         this.innerHTML = await response.text()
         

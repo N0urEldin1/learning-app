@@ -5,7 +5,7 @@ export default class navigationBar extends HTMLElement {
     }
 
     async render() {
-        const response = await fetch("src/components/nav-bar/nav-bar.html")
+        const response = await fetch("/src/components/nav-bar/nav-bar.html")
         
         this.innerHTML = await response.text()
         

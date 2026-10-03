@@ -8,7 +8,7 @@ export default class newNote extends HTMLElement {
     }
 
     async render() {
-        const response = await fetch("src/components/notes/new-note.html")
+        const response = await fetch("/src/components/notes/new-note.html")
         
         this.innerHTML = await response.text()
         

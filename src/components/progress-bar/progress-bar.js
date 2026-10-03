@@ -5,7 +5,7 @@ export default  class progressBar extends HTMLElement {
     }
 
     async render() {
-        const response = await fetch("src/components/progress-bar/progress-bar.html")
+        const response = await fetch("/src/components/progress-bar/progress-bar.html")
         
         this.innerHTML = await response.text()
         
