@@ -1,3 +1,5 @@
 import { route } from './router.js';
 
-route
+window.addEventListener("load", (event) => {
+    route(event)
+});

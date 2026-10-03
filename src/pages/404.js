@@ -6,8 +6,12 @@ export function page404() {
 
     document.querySelector('#app').append(div)
     
-    const nav = document.createElement("i")
+    const title = document.createElement("h1")
 
-    document.querySelector('.main').append(nav)
+    title.innerText = "404 Page"
+
+    document.querySelector('.main').appendChild(title)
+
+    return div
 
 }

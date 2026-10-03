@@ -18,7 +18,7 @@ const routes = {
 
 const handleLocation = () => {
     const path = window.location.pathname;
-    const renderPage = routes[path] || render404;
+    const renderPage = routes[path] || page404;
 
     new renderPage()
 

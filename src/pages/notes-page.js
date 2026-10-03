@@ -25,4 +25,6 @@ export function newNotesPage() {
     main.append(progress)
     main.append(video)
 
+    return div
+
 }
