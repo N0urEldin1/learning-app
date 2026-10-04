@@ -1,11 +1,4 @@
-@import url("src/css/base/utility.css");
-@import url("src/css/base/reset.css");
-@import url("src/css/base/typography.css");
-@import url("src/css/base/veriables.css");
-@import url("src/css/base/layout.css");
-@import url("src/css/base/icons.css");
-
-@import url("src/css/elements/divider.css");
+@import url("/src/css/base/veriables.css");
 
 :host {
     grid-area: note-frame;

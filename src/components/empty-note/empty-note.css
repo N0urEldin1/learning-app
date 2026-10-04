@@ -1,13 +1,14 @@
 @import url("/src/css/base/veriables.css");
 
 :host {
-    .empty-note-frame {
-	grid-area: main;
+    grid-area: empty;
+}
+
+.empty-note-frame {
 	gap: 2rem;
 	align-items: center;
 	height: fit-content;
 	margin: 100px auto;
-}
 }
 
 .form-divider {
