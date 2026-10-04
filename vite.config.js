@@ -1,3 +1,4 @@
+import { url } from "node:inspector";
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -7,7 +8,7 @@ export default defineConfig({
 
             configureServer(server) {
                 server.middlewares.use((req, res, next) => {
-                    if (req.url === "/note") {
+                    if (req.url.startsWith("/note/")) {
                         req.url = "/note.html";
                     }
 
