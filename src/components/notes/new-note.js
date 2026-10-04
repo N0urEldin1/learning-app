@@ -16,6 +16,18 @@ export default class newNote extends HTMLElement {
 
         this.querySelector('.add-topic-btn').addEventListener('click', (e) => {addTopic(e)})
 
+        // Prevent link breaks in topic title
+        const editableDiv = document.querySelectorAll('.no-break');
+        
+        for (let i = 0; i < editableDiv.length; i++) {
+            
+            editableDiv[i].addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+            e.preventDefault(); // Stop line break
+            }
+        });
+        }
+        
     }
     
 } 
