@@ -1,3 +1,6 @@
+import { rejects } from "node:assert";
+import { resolve } from "node:dns";
+
 const indexedDB = 
     window.indexedDB ||
     window.mozIndexedDB ||
@@ -7,13 +10,22 @@ const indexedDB =
 
 const openRequest = indexedDB.open("NotesDataBase", 1);
 
-openRequest.onerror = (event) => {
-    console.log("An error occurred with IndexedDB");
-    console.log(event);
-};
-
 openRequest.onupgradeneeded = () => {
     const db = openRequest.result;
     db.createObjectStore("notes", {keyPath: "note_id"});
 }
 
+const dbPromise = new Promise((resolve, rejects) => {
+
+    openRequest.onsuccess = () => {
+        resolve(openRequest.result);
+    };
+
+    openRequest.onerror = (event) => {
+        console.log("An error occurred with IndexedDB");
+        console.log(event);
+        rejects(openRequest.error)
+    };
+})
+
+export default dbPromise;
