@@ -48,3 +48,21 @@ export async function getData() {
     })
 
 }
+
+export async function loadData(data) {
+    console.log(data)
+
+    const notesContainer = document.querySelector(".notes")
+    const notes = notesContainer.children
+
+    console.log(notesContainer)
+    console.log(notes)
+
+    for (let i = 0; i < notes.length; i++) {
+        const topicTitle = notes[i].querySelector(".topic-title__title")
+
+        topicTitle.innerHTML = data.topic_content
+
+
+    }
+}

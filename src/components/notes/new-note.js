@@ -1,5 +1,6 @@
 import {saveContent} from "./note-data.js"
 import {getData} from "./note-data.js"
+import {loadData} from "./note-data.js"
 import {eventListerners} from "./note-script.js"
 
 export default class newNote extends HTMLElement {
@@ -9,12 +10,8 @@ export default class newNote extends HTMLElement {
         await this.renderElements()
 
         const data = await getData()
-
-        console.log(data)
         
-        // await getData()
-
-        // await loadData(data) data is returned from get data
+        await loadData(data)
 
         await saveContent()
         
