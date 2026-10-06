@@ -2,15 +2,13 @@ import {getDB} from "../../js/indexedDB"
 
 const db = await getDB()
 
+const url = window.location.pathname
+const videoId = url.split('/')[2]
+
 export async function saveContent() {
     
     const transaction = db.transaction("notes", "readwrite")
     const store = transaction.objectStore("notes")
-
-    const url = window.location.pathname
-    const videoId = url.split('/')[2]
-    
-    store.put({ note_id: videoId })
 
     // save topics in order
     const notesContainer = document.querySelector('.notes')
@@ -29,4 +27,24 @@ export async function saveContent() {
         const note = request.result
         console.log(note) 
     }
+}
+
+export async function getData() {
+    
+    const transaction = db.transaction("notes", "readwrite")
+    const store = transaction.objectStore("notes")
+
+    const request = store.get(videoId)
+
+
+    return new Promise((resolve, reject) => {
+        request.onsuccess = () => {
+            resolve(request.result)
+        }
+
+        request.onerror = () => {
+            reject(request.error)
+        }
+    })
+
 }
