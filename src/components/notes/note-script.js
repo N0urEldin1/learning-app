@@ -1,4 +1,29 @@
-export function updateProgress() {
+import {saveContent} from "./note-data.js"
+
+export async function eventListerners() {
+        const notes = document.querySelector('.notes')
+
+        notes.addEventListener('input', (e) => {saveContent(e)})
+        
+        notes.addEventListener('click', (e) => {noteFunctionality(e)})
+        
+        document.querySelector('.add-topic-btn').addEventListener('click', (e) => {addTopic(e)})
+
+
+        // Prevent link breaks in topic title
+        const editableDiv = document.querySelectorAll('.no-break');
+        
+        for (let i = 0; i < editableDiv.length; i++) {
+            
+            editableDiv[i].addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+            e.preventDefault(); // Stop line break
+                }
+            });
+        }
+    }
+
+function updateProgress() {
 
     const notes = document.querySelectorAll('.note')
     const noteCount = notes.length;
@@ -56,7 +81,7 @@ export function updateProgress() {
 }
 
 
-export function noteFunctionality(e) {
+function noteFunctionality(e) {
     
     const target = e.target
     
@@ -105,7 +130,7 @@ export function noteFunctionality(e) {
         updateProgress()   
     }
 
-export function addTopic() {
+function addTopic() {
     
     const notes = document.querySelector("#app").querySelector("new-note").querySelector(".notes")
     
