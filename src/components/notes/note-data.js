@@ -6,7 +6,7 @@ const url = window.location.pathname
 const videoId = url.split('/')[2]
 
 export async function saveContent() {
-    
+
     const transaction = db.transaction("notes", "readwrite")
     const store = transaction.objectStore("notes")
 
@@ -14,21 +14,18 @@ export async function saveContent() {
     const notesContainer = document.querySelector('.notes')
     const notes = notesContainer.children
     
+    const topics = []
     for (let i = 0; i < notes.length; i++) {
-        const title = notes[0].querySelector(".topic-title__title")
+        const title = notes[i]
         const titleText = title.innerText
 
-        const content = notes[0].querySelector(".note__text")
+        const content = notes[i].querySelector(".note__text")
         const contentText = content.innerHTML
 
-        store.put({note_id: videoId, orders: 1, topic_title: titleText, topic_conetnt: contentText})
+        topics.push({topic_order: i, topic_title: titleText, topic_conetnt: contentText})
     }   
-
-    const request = store.get(videoId)
-
-    request.onsuccess = () => {
-        const note = request.result
-    }
+    
+    store.put({video_id: videoId, topics: topics})
 }
 
 export async function getData() {
@@ -58,9 +55,9 @@ export async function loadData(data) {
 
     for (let i = 0; i < notes.length; i++) {
         const topicTitle = notes[i].querySelector(".topic-title__title")
-        topicTitle.innerText = data.topic_title
-
+        topicTitle.innerText = data.topics[i].topic_title
+        
         const content = notes[i].querySelector(".note__text")
-        content.innerHTML = data.topic_conetnt
+        content.innerHTML = data.topics[i].topic_conetnt
     }
 }

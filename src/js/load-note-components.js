@@ -1,4 +1,16 @@
 // import newNotesPage from "src/pages/notes-page.js"
+import {getDB} from "./indexedDB.js"
+
+const db = await getDB()
+
+const url = window.location.pathname
+const videoId = url.split('/')[2]
+
+const transaction = db.transaction("notes", "readwrite")
+const store = transaction.objectStore("notes")
+
+const request = store.get(videoId)
+
 
 import newNote from "../components/notes/new-note.js";
 import navigationBar from "../components/nav-bar/nav-bar.js";
@@ -26,10 +38,12 @@ const nav = document.createElement("nav-bar")
 nav.setAttribute('style', "grid-area:nav")
 
 const notesFrame = document.createElement('div')
-notesFrame.setAttribute('class', 'notes-frame')
+notesFrame.setAttribute('class', 'notes-frame flex-column')
 notesFrame.setAttribute('style', 'grid-area: notes-frame')
 
-const notes = document.createElement("new-note")
+const notes = document.createElement('div')
+notes.setAttribute('class', 'notes flex-column')
+
 // notes.setAttribute('style', "grid-area:note-frame")
 
 const addTopicBtn = document.createElement("add-topic")
@@ -44,6 +58,22 @@ video.setAttribute('style', "grid-area:video-frame;")
 main.append(nav)
 main.append(notesFrame)
 notesFrame.append(notes)
+// const note = document.createElement("new-note")
+// notes.append(note)
+
+
+let length;
+request.onsuccess = () => {
+    length = request.result.topics.length
+    
+    for (let i = 0; i < length; i++) {
+        const note = document.createElement("new-note")
+        notes.append(note)
+    }
+}
+
+
+
 notesFrame.append(addTopicBtn)
 main.append(progress)
 main.append(video)

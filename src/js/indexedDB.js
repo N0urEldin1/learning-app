@@ -14,8 +14,8 @@ const openRequest = indexedDB.open("NotesDataBase", 1);
 
 openRequest.onupgradeneeded = () => {
     db = openRequest.result;
-    const store = db.createObjectStore("notes", {keyPath: "note_id"});
-    store.createIndex("topic_order", "order", {unique: true})
+    const store = db.createObjectStore("notes", {keyPath: "video_id"}, {unique: false});
+    store.createIndex("topic_order", "topic_order", {unique: true}) // topic, topic_number
 }
 
 const dbPromise = new Promise((resolve, reject) => {
