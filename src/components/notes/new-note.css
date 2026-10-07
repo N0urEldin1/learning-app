@@ -1,20 +1,9 @@
 @import url("/src/css/base/veriables.css");
 
 :host {
-    grid-area: note-frame;
+    display: flex;
+    height: fit-content;
 }
-
-.notes-frame {
-    height: calc(100vh - 10%);;
-    width: clamp(33%, 100%, 100%);
-    margin-bottom: 16px;
-    padding-right: 8px;
-    min-height: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    gap: 8px;
-}
-
     
 .notes {
     width: 100%;
@@ -141,36 +130,3 @@
     color: var(--icon-color-2);
 } */
 
-.add-topic-frame {
-    width: 100%;
-    height: fit-content;
-    padding: 0 30px;
-}
-
-.add-topic-btn {
-    display: flex;
-    justify-content: center;
-    border-style: solid;
-    border-radius: var(--border-size-1);
-    border-color: var(--secondary-bg-color);
-    border-width: 0.8px;
-    background-color: var(--secondary-bg-color);
-    width: 100%;
-    padding: 16px 0;
-    color: var(--input-color-1);
-}
-
-
-.add-topic-btn:hover {
-    border-color: var(--hover-bg-color);
-    /* color: var(--text-color-main) */
-}
-
-.active {
-	display: flex;
-	height: fit-content;
-}
-
-.hidden {
-	display: none;
-}

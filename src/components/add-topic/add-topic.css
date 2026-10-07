@@ -1,0 +1,37 @@
+:host {
+    grid-area: add-topic;
+}
+
+.add-topic-frame {
+    width: 100%;
+    height: fit-content;
+    padding: 0 30px;
+}
+
+.add-topic-btn {
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-radius: var(--border-size-1);
+    border-color: var(--secondary-bg-color);
+    border-width: 0.8px;
+    background-color: var(--secondary-bg-color);
+    width: 100%;
+    padding: 16px 0;
+    color: var(--input-color-1);
+}
+
+
+.add-topic-btn:hover {
+    border-color: var(--hover-bg-color);
+    /* color: var(--text-color-main) */
+}
+
+.active {
+	display: flex;
+	height: fit-content;
+}
+
+.hidden {
+	display: none;
+}
