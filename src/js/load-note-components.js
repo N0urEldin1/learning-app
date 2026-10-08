@@ -83,3 +83,8 @@ request.onsuccess = () => {
 notesFrame.append(addTopicBtn)
 main.append(progress)
 main.append(video)
+
+
+import("../components/notes/note-script.js")
+// import("../components/notes/note-data.js")
+// import('../components/notes/note-data.js')

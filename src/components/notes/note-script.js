@@ -1,13 +1,27 @@
 import {saveContent} from "./note-data.js"
+import {loadData} from "./note-data.js"
+import {getData} from "./note-data.js"
 
-export async function eventListerners() {
-        const notes = document.querySelectorAll("new-note")
+document.addEventListener("note-ready" , (e) => {start(e)})
 
-        for (const note of notes) {
-            note.addEventListener('input', (e) => {saveContent()})
-            note.addEventListener('click', (e) => {noteFunctionality(e)})
-        }
+async function start(e) {    
+    
+    const data = await getData()
+    
+    await loadData(data)
 
+    updateProgress()
+
+    eventListerners(e)
+}
+
+
+export async function eventListerners(e) {
+
+        const target = e.target
+
+        target.addEventListener('input', () => {saveContent()})
+        target.addEventListener('click', (e) => {noteFunctionality(e)})
 
         // Prevent link breaks in topic title
         const editableDiv = document.querySelectorAll('.no-break');
@@ -129,4 +143,4 @@ function noteFunctionality(e) {
             }
         }
         
-    }    
+    }
