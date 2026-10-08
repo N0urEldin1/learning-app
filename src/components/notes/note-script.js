@@ -1,11 +1,13 @@
 import {saveContent} from "./note-data.js"
 
 export async function eventListerners() {
-        const notes = document.querySelector('.notes')
+        const notes = document.querySelectorAll("new-note")
 
-        notes.addEventListener('input', (e) => {saveContent(e)})
-        
-        notes.addEventListener('click', (e) => {noteFunctionality(e)})
+        for (const note of notes) {
+            note.addEventListener('input', (e) => {saveContent()})
+            note.addEventListener('click', (e) => {noteFunctionality(e)})
+        }
+
 
         // Prevent link breaks in topic title
         const editableDiv = document.querySelectorAll('.no-break');
