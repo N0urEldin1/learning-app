@@ -11,14 +11,13 @@ export async function saveContent() {
     const store = transaction.objectStore("notes")
 
     // save topics in order
-    const notesContainer = document.querySelector('.notes')
-    const notes = notesContainer.children
+    const notes = document.querySelectorAll("new-note")
     
     const topics = []
     for (let i = 0; i < notes.length; i++) {
-        const title = notes[i]
+        const title = notes[i].querySelector(".topic-title__title")
         const titleText = title.innerText
-
+        
         const content = notes[i].querySelector(".note__text")
         const contentText = content.innerHTML
 
@@ -50,8 +49,7 @@ export async function getData() {
 
 export async function loadData(data) {
 
-    const notesContainer = document.querySelector(".notes")
-    const notes = notesContainer.children
+    const notes = document.querySelectorAll("new-note")
 
     for (let i = 0; i < notes.length; i++) {
         const topicTitle = notes[i].querySelector(".topic-title__title")
