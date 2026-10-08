@@ -58,9 +58,6 @@ video.setAttribute('style', "grid-area:video-frame;")
 main.append(nav)
 main.append(notesFrame)
 notesFrame.append(notes)
-// const note = document.createElement("new-note")
-// notes.append(note)
-
 
 let length;
 request.onsuccess = () => {
@@ -78,13 +75,9 @@ request.onsuccess = () => {
 
 }
 
-
-
 notesFrame.append(addTopicBtn)
 main.append(progress)
 main.append(video)
 
 
 import("../components/notes/note-script.js")
-// import("../components/notes/note-data.js")
-// import('../components/notes/note-data.js')

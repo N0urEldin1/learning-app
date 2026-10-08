@@ -1,13 +1,7 @@
 import {saveContent} from "../notes/note-data.js"
-// import newNote from "../components/notes/new-note.js";
-
 
 export async function eventListerners() {
-        
-    document.querySelector('.add-topic-btn').addEventListener('click', (e) => {addTopic(e)})
-
-    document.querySelector('.add-topic-btn').addEventListener('click', (e) => {saveContent(e)})
-        
+    document.querySelector('.add-topic-btn').addEventListener('click', (e) => {addTopic(e)})        
 }
 
 
@@ -75,7 +69,14 @@ function addTopic() {
     
     const note = document.createElement("new-note")
     notes.append(note)
+
+    document.addEventListener("note-ready" , (e) => {start(e)})
     
-            // Update progress bar
-            updateProgress() 
+}
+
+async function start(e) {    
+    
+    saveContent()
+
+    updateProgress()
 }
