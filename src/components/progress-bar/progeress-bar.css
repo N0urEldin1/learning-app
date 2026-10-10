@@ -33,4 +33,6 @@
     height: 4px;
     border-radius: 2px;
 	background-color: #2BBA3D;
+    transition: width 0.15s ease-in-out;
+    /* transition-duration: width .3s; */
 }
