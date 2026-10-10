@@ -30,6 +30,7 @@
 .title-section__left {
     gap: 6px;
     align-items: center;
+    width: 100%;
 }
 
 .title-section__right {
@@ -72,6 +73,7 @@
     font-family: var(--font-family);
     margin-bottom: var(--spacing-2) 0;
     color: var(----text-color-main);
+    width: 100%;
 }
 
 

@@ -30,9 +30,14 @@ export async function eventListerners(e) {
         
         for (let i = 0; i < editableDiv.length; i++) {
             
-            editableDiv[i].addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
+            editableDiv[i].addEventListener('beforeinput', (e) => {
+            if (e.inputType === 'insertLineBreak' || e.inputType === 'insertParagraph') {
             e.preventDefault(); // Stop line break
+                }
+
+            if (editableDiv[i].textContent.length === 1) {
+                editableDiv[i].innerHTML = '';
+                saveContent()
                 }
             });
         }
