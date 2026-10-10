@@ -21,7 +21,7 @@ export async function saveContent() {
         const content = notes[i].querySelector(".note__text")
         const contentText = content.innerHTML
 
-        topics.push({topic_order: i, topic_title: titleText, topic_conetnt: contentText})
+        topics.push({topic_order: i, topic_title: titleText, topic_content: contentText})
     }   
     
     store.put({video_id: videoId, topics: topics})
@@ -56,6 +56,6 @@ export async function loadData(data) {
         topicTitle.innerText = data.topics[i].topic_title
         
         const content = notes[i].querySelector(".note__text")
-        content.innerHTML = data.topics[i].topic_conetnt
+        content.innerHTML = data.topics[i].topic_content
     }
 }
