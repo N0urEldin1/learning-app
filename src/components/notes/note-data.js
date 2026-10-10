@@ -52,10 +52,13 @@ export async function loadData(data) {
     const notes = document.querySelectorAll("new-note")
 
     for (let i = 0; i < notes.length; i++) {
-        const topicTitle = notes[i].querySelector(".topic-title__title")
-        topicTitle.innerText = data.topics[i].topic_title
-        
-        const content = notes[i].querySelector(".note__text")
-        content.innerHTML = data.topics[i].topic_content
+
+        if (data.topics[i]) {
+            const topicTitle = notes[i].querySelector(".topic-title__title")
+            topicTitle.innerText = data.topics[i].topic_title
+            
+            const content = notes[i].querySelector(".note__text")
+            content.innerHTML = data.topics[i].topic_content
+        }
     }
 }
