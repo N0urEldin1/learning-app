@@ -21,7 +21,18 @@ export async function saveContent() {
         const content = notes[i].querySelector(".note__text")
         const contentText = content.innerHTML
 
-        topics.push({topic_order: i, topic_title: titleText, topic_content: contentText})
+        const chekmark = notes[i].querySelector(".topic-title__ckecked")
+        const unchekmark = notes[i].querySelector(".topic-title__unckecked ")
+
+        let isChecked;
+
+        if (chekmark.classList.contains("hidden")) {
+            isChecked = false
+        } else if (unchekmark.classList.contains("hidden")) {
+            isChecked = true
+        }
+
+        topics.push({topic_order: i, topic_title: titleText, topic_content: contentText, isChecked: isChecked})
     }   
     
     store.put({video_id: videoId, topics: topics})
@@ -59,6 +70,17 @@ export async function loadData(data) {
             
             const content = notes[i].querySelector(".note__text")
             content.innerHTML = data.topics[i].topic_content
+
+            const chekmark = notes[i].querySelector(".topic-title__ckecked")
+            const unchekmark = notes[i].querySelector(".topic-title__unckecked ")
+
+            if (data.topics[i].isChecked == true) {
+                chekmark.classList.remove("hidden")
+                unchekmark.classList.add("hidden")
+            } else {
+                chekmark.classList.add("hidden")
+                unchekmark.classList.remove("hidden")
+            }
         }
     }
 }

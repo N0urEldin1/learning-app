@@ -117,6 +117,7 @@ function noteFunctionality(e) {
 
             // Update progress bar
             updateProgress()   
+            saveContent()
         
         }
         
