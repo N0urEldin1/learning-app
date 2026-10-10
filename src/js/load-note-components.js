@@ -61,16 +61,18 @@ notesFrame.append(notes)
 
 let length;
 request.onsuccess = () => {
-    length = request.result.topics.length
-    
-    if (length == 0) {
-        const note = document.createElement("new-note")
-        notes.append(note)
-    } else {
+    if (request.result != undefined) {
+
+        length = request.result.topics.length
+
         for (let i = 0; i < length; i++) {
-            const note = document.createElement("new-note")
+                const note = document.createElement("new-note")
+                notes.append(note)
+            }
+    } else {
+        
+        const note = document.createElement("new-note")
             notes.append(note)
-        }
     }
 
 }

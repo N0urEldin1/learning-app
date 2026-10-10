@@ -7,8 +7,10 @@ document.addEventListener("note-ready" , (e) => {start(e)})
 async function start(e) {    
     
     const data = await getData()
-    
-    await loadData(data)
+
+    if (data != undefined) {
+        await loadData(data)
+    }
 
     updateProgress()
 
