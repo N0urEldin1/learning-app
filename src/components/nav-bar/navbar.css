@@ -7,6 +7,8 @@
 aside {
 	position: fixed;
 	max-height: calc(100dvh - 1rem);
+    display: flex;
+    height: 100dvh;
 }
 
 .navbar-frame {
