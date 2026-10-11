@@ -118,7 +118,9 @@ new-note {
 }
 .note__text {
     padding: 0 8px;
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: normal;
 }
 .note__frame {
     gap: var(--spacing-4);
